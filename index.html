@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이주형 — 게임 UI 디자이너 포트폴리오</title>
+<meta name="description" content="이주형 — 7년차 게임 UI 디자이너 포트폴리오. Unreal Engine Material 기반 UI 이펙트 전문.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#0a0a0c;--bg2:#111114;--bg3:#1a1a1f;
+--text:#e8e6e1;--text-dim:#8a8880;--text-muted:#555550;
+--accent:#c8ff00;--accent2:#00e5ff;--accent3:#ff3d5a;
+--font-main:'Pretendard Variable','Pretendard',sans-serif;
+--font-mono:'Space Mono',monospace;
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--bg);color:var(--text);font-family:var(--font-main);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--accent);color:var(--bg)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;mix-blend-mode:difference}
+nav .logo{font-weight:800;font-size:20px;letter-spacing:-.5px;color:#fff}
+nav .logo span{color:var(--accent);mix-blend-mode:normal}
+nav ul{display:flex;gap:32px;list-style:none}
+nav ul li a{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:2px;color:#fff;transition:all .3s;position:relative}
+nav ul li a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--accent);transition:width .3s}
+nav ul li a:hover::after{width:100%}
+nav ul li a .num{color:var(--accent);margin-right:4px;font-size:10px}
+
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:101;background:none;border:none;padding:8px}
+.nav-toggle span{width:24px;height:1.5px;background:#fff;transition:all .3s}
+
+/* HERO */
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(200,255,0,.04) 0%,transparent 60%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(200,255,0,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(200,255,0,.03) 1px,transparent 1px);background-size:60px 60px;animation:gridMove 20s linear infinite}
+@keyframes gridMove{to{background-position:60px 60px}}
+
+.hero-label{font-family:var(--font-mono);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--text-dim);margin-bottom:24px;opacity:0;animation:fadeUp .8s .3s forwards}
+.hero-title{font-weight:900;font-size:clamp(48px,10vw,140px);line-height:.9;text-align:center;letter-spacing:-3px;position:relative;z-index:1}
+.hero-title .line{display:block;overflow:hidden}
+.hero-title .line span{display:inline-block;opacity:0;transform:translateY(100%);animation:slideUp .8s forwards}
+.hero-title .line:nth-child(1) span{animation-delay:.5s}
+.hero-title .line:nth-child(2) span{animation-delay:.7s}
+.hero-title .stroke-text{-webkit-text-stroke:1.5px var(--text);color:transparent}
+.hero-title .accent-text{color:var(--accent)}
+@keyframes slideUp{to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{to{opacity:1}}
+
+.hero-sub{margin-top:40px;font-size:15px;color:var(--text-dim);letter-spacing:0;opacity:0;animation:fadeUp .8s 1.2s forwards;text-align:center;line-height:1.6}
+.hero-sub span{color:var(--accent);font-weight:600}
+
+.hero-tags{display:flex;gap:12px;margin-top:24px;opacity:0;animation:fadeUp .8s 1.4s forwards}
+.hero-tags .tag{padding:6px 16px;border-radius:99px;border:1px solid rgba(255,255,255,.1);font-family:var(--font-mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted)}
+
+.scroll-indicator{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeUp .8s 1.6s forwards}
+.scroll-indicator span{font-family:var(--font-mono);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted)}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--accent),transparent);animation:scrollPulse 2s infinite}
+@keyframes scrollPulse{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+
+/* SECTIONS */
+section{padding:120px 40px}
+.section-header{margin-bottom:80px}
+.section-num{font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:4px;text-transform:uppercase;margin-bottom:12px}
+.section-title{font-weight:800;font-size:clamp(32px,5vw,56px);letter-spacing:-2px;line-height:1.1}
+
+/* WORK GRID */
+.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.work-card{position:relative;overflow:hidden;border-radius:12px;background:var(--bg2);border:1px solid rgba(255,255,255,.05);aspect-ratio:4/3;cursor:pointer;transition:all .4s cubic-bezier(.25,.46,.45,.94)}
+.work-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.work-card:hover .work-card-overlay{opacity:1}
+.work-card:hover .work-card-img{transform:scale(1.05)}
+.work-card-img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.25,.46,.45,.94)}
+.work-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,12,.95) 0%,rgba(10,10,12,.4) 50%,transparent 100%);opacity:0;transition:opacity .4s;display:flex;flex-direction:column;justify-content:flex-end;padding:32px}
+.work-card-tag{font-family:var(--font-mono);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.work-card-title{font-weight:700;font-size:24px;letter-spacing:-1px;margin-bottom:4px}
+.work-card-desc{font-size:13px;color:var(--text-dim);line-height:1.5}
+.work-card-arrow{position:absolute;top:20px;right:20px;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;opacity:0;transform:translate(-10px,10px);transition:all .4s}
+.work-card:hover .work-card-arrow{opacity:1;transform:translate(0)}
+
+/* ABOUT */
+.about-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start}
+.about-intro{font-size:17px;line-height:1.9;color:var(--text-dim)}
+.about-intro strong{color:var(--text);font-weight:600}
+.about-quote{margin-top:32px;padding-left:20px;border-left:2px solid var(--accent);font-style:normal;color:var(--text-dim);line-height:1.7;font-size:15px}
+
+.timeline{position:relative;padding-left:32px}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--accent),var(--accent2),var(--accent3))}
+.timeline-item{position:relative;padding-bottom:40px}
+.timeline-item::before{content:'';position:absolute;left:-36px;top:6px;width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px rgba(200,255,0,.4)}
+.timeline-item:nth-child(2)::before{background:var(--accent2);box-shadow:0 0 12px rgba(0,229,255,.4)}
+.timeline-item:nth-child(3)::before{background:var(--accent2);box-shadow:0 0 12px rgba(0,229,255,.4)}
+.timeline-item:nth-child(4)::before{background:var(--accent3);box-shadow:0 0 12px rgba(255,61,90,.4)}
+.timeline-date{font-family:var(--font-mono);font-size:11px;color:var(--text-muted);letter-spacing:2px;margin-bottom:4px}
+.timeline-company{font-weight:700;font-size:18px;margin-bottom:2px}
+.timeline-role{font-size:13px;color:var(--text-dim);line-height:1.6}
+.timeline-detail{color:var(--text-muted);font-size:12px;margin-top:2px;line-height:1.5}
+
+.skills-grid{margin-top:48px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.skill-tag{padding:10px 16px;border-radius:8px;background:var(--bg3);border:1px solid rgba(255,255,255,.05);font-size:13px;color:var(--text-dim);text-align:center;transition:all .3s}
+.skill-tag:hover{border-color:var(--accent);color:var(--accent)}
+
+/* PLAYGROUND */
+.playground-marquee{overflow:hidden;white-space:nowrap;margin-bottom:48px}
+.playground-marquee-inner{display:inline-flex;animation:marquee 30s linear infinite}
+.playground-marquee-item{font-weight:900;font-size:clamp(48px,8vw,96px);letter-spacing:-2px;padding:0 40px;color:transparent;-webkit-text-stroke:1px var(--text-muted)}
+.playground-marquee-item:nth-child(odd){-webkit-text-stroke-color:var(--accent)}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+.playground-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.playground-item{aspect-ratio:1;border-radius:12px;background:var(--bg2);border:1px solid rgba(255,255,255,.05);overflow:hidden;position:relative;cursor:pointer;transition:all .4s}
+.playground-item:hover{border-color:var(--accent2);transform:scale(1.02)}
+.playground-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.playground-item:hover img{transform:scale(1.08)}
+.playground-item-label{position:absolute;bottom:0;left:0;right:0;padding:16px;background:linear-gradient(transparent,rgba(10,10,12,.9));font-size:12px;letter-spacing:1px;color:var(--text-dim)}
+
+/* CONTACT */
+.contact-section{text-align:center;padding:160px 40px}
+.contact-big{font-weight:900;font-size:clamp(32px,6vw,72px);letter-spacing:-2px;line-height:1.1;margin-bottom:24px}
+.contact-big .accent{color:var(--accent)}
+.contact-desc{font-size:16px;color:var(--text-dim);max-width:480px;margin:0 auto 48px;line-height:1.7}
+.contact-links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.contact-btn{padding:14px 32px;border-radius:99px;font-size:13px;font-weight:600;letter-spacing:1px;border:1px solid rgba(255,255,255,.15);transition:all .3s;cursor:pointer;background:transparent;color:var(--text);font-family:var(--font-main)}
+.contact-btn:hover{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.contact-btn.primary{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.contact-btn.primary:hover{background:transparent;color:var(--accent)}
+
+/* FOOTER */
+footer{padding:40px;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;align-items:center}
+footer .copy{font-family:var(--font-mono);font-size:11px;color:var(--text-muted);letter-spacing:1px}
+footer .links{display:flex;gap:24px}
+footer .links a{font-size:12px;color:var(--text-muted);transition:color .3s}
+footer .links a:hover{color:var(--accent)}
+
+/* SCROLL ANIMATIONS */
+.reveal{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.25,.46,.45,.94)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
+
+/* CURSOR */
+.cursor{width:16px;height:16px;border:1.5px solid var(--accent);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transition:width .2s,height .2s;transform:translate(-50%,-50%);mix-blend-mode:difference}
+.cursor.hover{width:48px;height:48px}
+
+/* PAGE TRANSITION */
+.page-transition{position:fixed;inset:0;background:var(--accent);z-index:9999;transform:scaleY(0);transform-origin:bottom;pointer-events:none}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .work-grid{grid-template-columns:1fr}
+  .about-layout{grid-template-columns:1fr;gap:48px}
+  .playground-grid{grid-template-columns:repeat(2,1fr)}
+  section{padding:80px 24px}
+}
+@media(max-width:768px){
+  nav{padding:16px 20px}
+  nav ul{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,10,12,.98);flex-direction:column;align-items:center;justify-content:center;gap:32px;backdrop-filter:blur(20px)}
+  nav ul.open{display:flex}
+  .nav-toggle{display:flex}
+  .hero-title{letter-spacing:-1px}
+  .hero-tags{flex-wrap:wrap;justify-content:center}
+  .playground-grid{grid-template-columns:1fr 1fr}
+  .skills-grid{grid-template-columns:1fr}
+  .contact-links{flex-direction:column;align-items:center}
+  footer{flex-direction:column;gap:16px;text-align:center}
+  .cursor{display:none}
+}
+@media(max-width:480px){
+  .playground-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="page-transition" id="pageTransition"></div>
+
+<!-- 내비게이션 -->
+<nav>
+  <a href="#" class="logo">이주형<span>.</span></a>
+  <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
+    <span></span><span></span><span></span>
+  </button>
+  <ul id="navMenu">
+    <li><a href="#work"><span class="num">01</span> 작업</a></li>
+    <li><a href="#about"><span class="num">02</span> 소개</a></li>
+    <li><a href="#playground"><span class="num">03</span> 실험실</a></li>
+    <li><a href="#contact"><span class="num">04</span> 연락</a></li>
+  </ul>
+</nav>
+
+<!-- 히어로 -->
+<section class="hero" id="hero">
+  <div class="hero-grid"></div>
+  <p class="hero-label">Game UI Designer — 7+ Years</p>
+  <h1 class="hero-title">
+    <span class="line"><span class="stroke-text">게임</span> <span class="accent-text">UI</span></span>
+    <span class="line"><span>디자이너</span></span>
+  </h1>
+  <p class="hero-sub"><span>직관적인</span> 인터페이스와 <span>Material</span> 기반 연출을 설계합니다</p>
+  <div class="hero-tags">
+    <span class="tag">Unreal Engine</span>
+    <span class="tag">UI/UX</span>
+    <span class="tag">Material</span>
+    <span class="tag">Motion</span>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- 작업 -->
+<section id="work">
+  <div class="section-header reveal">
+    <p class="section-num">01 — 주요 작업</p>
+    <h2 class="section-title">프로젝트</h2>
+  </div>
+  <div class="work-grid">
+
+    <a href="projects/crossfire.html" class="work-card reveal reveal-delay-1" data-project>
+      <img src="images/crossfire/main.png" class="work-card-img" alt="크로스파이어" loading="lazy">
+      <div class="work-card-overlay">
+        <span class="work-card-tag">PC / 콘솔 — FPS</span>
+        <h3 class="work-card-title">크로스파이어 X / HD</h3>
+        <p class="work-card-desc">이펙트 및 로비 개편, Material 기반 UI 연출</p>
+      </div>
+      <div class="work-card-arrow">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </a>
+
+    <a href="projects/chrono.html" class="work-card reveal reveal-delay-2" data-project>
+      <img src="images/chrono/main.png" class="work-card-img" alt="크로노 오디세이" loading="lazy">
+      <div class="work-card-overlay">
+        <span class="work-card-tag">PC / 콘솔 — MMORPG</span>
+        <h3 class="work-card-title">크로노 오디세이</h3>
+        <p class="work-card-desc">시스템 UI, 스킬 아이콘, 인터랙션 이펙트</p>
+      </div>
+      <div class="work-card-arrow">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </a>
+
+    <a href="projects/quantum.html" class="work-card reveal reveal-delay-3" data-project>
+      <img src="images/quantum/main.png" class="work-card-img" alt="퀀텀 나이츠" loading="lazy">
+      <div class="work-card-overlay">
+        <span class="work-card-tag">PC — RPG</span>
+        <h3 class="work-card-title">퀀텀 나이츠</h3>
+        <p class="work-card-desc">HUD 디자인, 스킬 아이콘, Material 이펙트</p>
+      </div>
+      <div class="work-card-arrow">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </a>
+
+    <a href="projects/justcause.html" class="work-card reveal reveal-delay-4" data-project>
+      <img src="images/justcause/main.png" class="work-card-img" alt="저스트 코즈 모바일" loading="lazy">
+      <div class="work-card-overlay">
+        <span class="work-card-tag">모바일 — TPS / RPG</span>
+        <h3 class="work-card-title">저스트 코즈 모바일</h3>
+        <p class="work-card-desc">HUD, 인벤토리, 월드맵, 던전 UI</p>
+      </div>
+      <div class="work-card-arrow">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- 소개 -->
+<section id="about">
+  <div class="section-header reveal">
+    <p class="section-num">02 — 소개</p>
+    <h2 class="section-title">이주형</h2>
+  </div>
+  <div class="about-layout">
+    <div class="reveal">
+      <p class="about-intro">
+        <strong>UI 디자이너로 7년이라는 시간을 보내고 있습니다.</strong><br><br>
+        UI 디자인 뿐만 아니라 연출에도 많은 중요함을 알고 있기에 디자인에만 치중하지 않고,
+        항상 디자인과 연출의 한계를 뛰어넘기 위해 노력하고 있습니다.<br><br>
+        직관적이고 친절한 UI/UX의 구현이야말로 디자이너의 역할임을 깨달았습니다.
+        엔진에 디자인을 입힐 때는 그 퀄리티를 최대한 높이는 데 방점을 찍고,
+        UMG에 구현할 Material을 적극 활용해 시각적 피드백을 구현합니다.
+      </p>
+      <blockquote class="about-quote">
+        "디자인이 사용자들에게 시각적인 즐거움 뿐만 아니라 그 자체로 매뉴얼이자 지도가 되는
+        직관적인 디자인을 하는 것이 저의 철학입니다."
+      </blockquote>
+      <div class="skills-grid" style="margin-top:40px">
+        <div class="skill-tag">Unreal Engine 3/4/5</div>
+        <div class="skill-tag">UMG / Material</div>
+        <div class="skill-tag">Photoshop / Illustrator</div>
+        <div class="skill-tag">Figma</div>
+        <div class="skill-tag">After Effects</div>
+        <div class="skill-tag">UI/UX 디자인</div>
+        <div class="skill-tag">모션 / VFX</div>
+        <div class="skill-tag">아이콘 디자인</div>
+      </div>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <div class="timeline">
+        <div class="timeline-item">
+          <p class="timeline-date">2022. 07 — 현재</p>
+          <h4 class="timeline-company">스마일게이트엔터테인먼트</h4>
+          <p class="timeline-role">NCF UI1팀 · 선임</p>
+          <p class="timeline-detail">크로스파이어 HD / 크로스파이어 X — FPS<br>이펙트, 배너, 로비 개편, Material 이펙트 제작</p>
+        </div>
+        <div class="timeline-item">
+          <p class="timeline-date">2021. 08 — 2022. 07</p>
+          <h4 class="timeline-company">엔픽셀</h4>
+          <p class="timeline-role">크로노오디세이 UI팀 · 사원</p>
+          <p class="timeline-detail">MMORPG — 시스템 UI, 스킬 아이콘, 커스텀 Material</p>
+        </div>
+        <div class="timeline-item">
+          <p class="timeline-date">2021. 01 — 2021. 08</p>
+          <h4 class="timeline-company">라인게임즈 스페이스다이브</h4>
+          <p class="timeline-role">UI디자인팀 · 사원</p>
+          <p class="timeline-detail">퀀텀나이츠 — HUD, 스킬 아이콘, 이펙트 가이드</p>
+        </div>
+        <div class="timeline-item">
+          <p class="timeline-date">2018. 08 — 2020. 09</p>
+          <h4 class="timeline-company">팩토리얼게임즈</h4>
+          <p class="timeline-role">UI디자인팀 · 사원</p>
+          <p class="timeline-detail">프로젝트 크레이지 — 인벤토리, 강화 시스템, 이펙트</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 실험실 -->
+<section id="playground">
+  <div class="section-header reveal">
+    <p class="section-num">03 — 실험실</p>
+    <h2 class="section-title">Material & 모션</h2>
+  </div>
+  <div class="playground-marquee">
+    <div class="playground-marquee-inner">
+      <span class="playground-marquee-item">MATERIAL</span>
+      <span class="playground-marquee-item">이펙트</span>
+      <span class="playground-marquee-item">MOTION</span>
+      <span class="playground-marquee-item">UNREAL</span>
+      <span class="playground-marquee-item">MATERIAL</span>
+      <span class="playground-marquee-item">이펙트</span>
+      <span class="playground-marquee-item">MOTION</span>
+      <span class="playground-marquee-item">UNREAL</span>
+    </div>
+  </div>
+  <div class="playground-grid">
+    <div class="playground-item reveal reveal-delay-1">
+      <img src="images/crossfire/text-effect.gif" alt="텍스트 이펙트" loading="lazy">
+      <div class="playground-item-label">텍스트 이펙트</div>
+    </div>
+    <div class="playground-item reveal reveal-delay-2">
+      <img src="images/crossfire/boost-vfx.gif" alt="부스트 이펙트" loading="lazy">
+      <div class="playground-item-label">부스트 VFX</div>
+    </div>
+    <div class="playground-item reveal reveal-delay-3">
+      <img src="images/crossfire/loading-fx.gif" alt="로딩 이펙트" loading="lazy">
+      <div class="playground-item-label">로딩 이펙트</div>
+    </div>
+    <div class="playground-item reveal reveal-delay-1">
+      <img src="images/crossfire/mission-clear.gif" alt="미션 완료" loading="lazy">
+      <div class="playground-item-label">미션 완료 연출</div>
+    </div>
+    <div class="playground-item reveal reveal-delay-2">
+      <img src="images/quantum/level-up-motion.gif" alt="UI 모션" loading="lazy">
+      <div class="playground-item-label">UI 모션</div>
+    </div>
+    <div class="playground-item reveal reveal-delay-3">
+      <img src="images/crossfire/pve-weapon-blessing-detail.gif" alt="무기 축복" loading="lazy">
+      <div class="playground-item-label">무기 축복 연출</div>
+    </div>
+  </div>
+</section>
+
+<!-- 연락 -->
+<section id="contact" class="contact-section">
+  <div class="reveal">
+    <p class="section-num" style="text-align:center">04 — 연락</p>
+    <h2 class="contact-big">함께 <span class="accent">만들어</span><br>나가요</h2>
+    <p class="contact-desc">새로운 프로젝트나 협업에 관심이 있으시다면 편하게 연락해 주세요.</p>
+    <div class="contact-links">
+      <a href="mailto:xpfks951@naver.com" class="contact-btn primary">이메일 보내기</a>
+      <a href="https://xpfks951.com" class="contact-btn" target="_blank">기존 사이트</a>
+    </div>
+  </div>
+</section>
+
+<!-- 푸터 -->
+<footer>
+  <p class="copy">&copy; 2026 이주형. All rights reserved.</p>
+  <div class="links">
+    <a href="#hero">맨 위로</a>
+    <a href="mailto:xpfks951@naver.com">이메일</a>
+  </div>
+</footer>
+
+<script>
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+reveals.forEach(el=>observer.observe(el));
+
+const cursor=document.getElementById('cursor');
+let cx=0,cy=0,tx=0,ty=0;
+document.addEventListener('mousemove',e=>{tx=e.clientX;ty=e.clientY});
+function updateCursor(){cx+=(tx-cx)*.12;cy+=(ty-cy)*.12;cursor.style.left=cx+'px';cursor.style.top=cy+'px';requestAnimationFrame(updateCursor)}
+updateCursor();
+document.querySelectorAll('a,button,.work-card,.playground-item,.skill-tag,.contact-btn').forEach(el=>{
+  el.addEventListener('mouseenter',()=>cursor.classList.add('hover'));
+  el.addEventListener('mouseleave',()=>cursor.classList.remove('hover'));
+});
+
+const navToggle=document.getElementById('navToggle');
+const navMenu=document.getElementById('navMenu');
+navToggle.addEventListener('click',()=>navMenu.classList.toggle('open'));
+navMenu.querySelectorAll('a').forEach(link=>{link.addEventListener('click',()=>navMenu.classList.remove('open'))});
+
+document.querySelectorAll('[data-project]').forEach(link=>{
+  link.addEventListener('click',e=>{
+    e.preventDefault();
+    const href=link.getAttribute('href');
+    const pt=document.getElementById('pageTransition');
+    pt.style.transformOrigin='bottom';
+    pt.style.animation='ptIn .5s forwards';
+    setTimeout(()=>{window.location.href=href},500);
+  });
+});
+
+const style=document.createElement('style');
+style.textContent='@keyframes ptIn{to{transform:scaleY(1)}}@keyframes ptOut{from{transform:scaleY(1)}to{transform:scaleY(0)}}';
+document.head.appendChild(style);
+window.addEventListener('load',()=>{
+  const pt=document.getElementById('pageTransition');
+  pt.style.transformOrigin='top';pt.style.transform='scaleY(1)';
+  pt.style.animation='ptOut .5s .1s forwards';
+});
+</script>
+</body>
+</html>

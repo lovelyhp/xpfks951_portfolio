@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>크로스파이어 X/HD — 이주형 포트폴리오</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0c;--bg2:#111114;--bg3:#1a1a1f;--text:#e8e6e1;--text-dim:#8a8880;--text-muted:#555550;--accent:#c8ff00;--accent2:#00e5ff;--accent3:#ff3d5a;--font-main:'Pretendard Variable','Pretendard',sans-serif;--font-mono:'Space Mono',monospace}
+html{scroll-behavior:smooth;overflow-x:hidden}body{background:var(--bg);color:var(--text);font-family:var(--font-main);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}::selection{background:var(--accent);color:var(--bg)}img{max-width:100%;display:block}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;mix-blend-mode:difference}
+nav .logo{font-weight:800;font-size:20px;color:#fff}nav .logo span{color:var(--accent)}
+nav .back{font-size:13px;color:#fff;display:flex;align-items:center;gap:8px;transition:color .3s}nav .back:hover{color:var(--accent)}nav .back svg{transition:transform .3s}nav .back:hover svg{transform:translateX(-4px)}
+
+.project-hero{height:70vh;min-height:480px;position:relative;overflow:hidden;display:flex;align-items:flex-end}
+.project-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}
+.project-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,var(--bg) 0%,rgba(10,10,12,.3) 50%,rgba(10,10,12,.6) 100%)}
+.project-hero-content{position:relative;z-index:1;padding:60px 40px;width:100%}
+.project-tag{font-family:var(--font-mono);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.project-title{font-weight:900;font-size:clamp(36px,6vw,72px);letter-spacing:-2px;line-height:1}
+.project-subtitle{font-size:16px;color:var(--text-dim);margin-top:12px;max-width:600px;line-height:1.6}
+
+.project-meta{display:flex;gap:48px;padding:48px 40px;border-bottom:1px solid rgba(255,255,255,.05)}
+.meta-item{display:flex;flex-direction:column;gap:4px}
+.meta-label{font-family:var(--font-mono);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted)}
+.meta-value{font-size:14px;color:var(--text-dim)}
+
+.project-content{max-width:1200px;margin:0 auto;padding:80px 40px}
+.project-content h3{font-weight:700;font-size:24px;letter-spacing:-1px;margin:64px 0 24px;padding-top:32px;border-top:1px solid rgba(255,255,255,.05)}
+.project-content h3:first-child{margin-top:0;border-top:none;padding-top:0}
+.project-content p{font-size:15px;color:var(--text-dim);line-height:1.8;margin-bottom:24px;max-width:720px}
+.img-full{margin:40px 0;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.05)}
+.img-full img{width:100%;display:block}
+.img-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:40px 0}
+.img-grid img{border-radius:8px;border:1px solid rgba(255,255,255,.05)}
+.img-caption{font-size:12px;color:var(--text-muted);margin-top:8px;text-align:center}
+
+.project-nav{display:flex;justify-content:space-between;align-items:center;padding:60px 40px;border-top:1px solid rgba(255,255,255,.05)}
+.project-nav a{font-size:13px;color:var(--text-dim);transition:color .3s;display:flex;align-items:center;gap:8px}
+.project-nav a:hover{color:var(--accent)}
+
+footer{padding:40px;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;align-items:center}
+footer .copy{font-family:var(--font-mono);font-size:11px;color:var(--text-muted)}
+footer .links{display:flex;gap:24px}footer .links a{font-size:12px;color:var(--text-muted);transition:color .3s}footer .links a:hover{color:var(--accent)}
+
+.reveal{opacity:0;transform:translateY(30px);transition:all .7s cubic-bezier(.25,.46,.45,.94)}.reveal.visible{opacity:1;transform:translateY(0)}
+.thankyou{text-align:center;padding:80px 0 40px;border-top:1px solid rgba(255,255,255,.05);margin-top:64px}
+.thankyou p{font-size:clamp(20px,3vw,32px);font-weight:300;color:var(--text-muted);letter-spacing:2px}
+@media(max-width:768px){nav{padding:16px 20px}.project-hero-content{padding:40px 20px}.project-meta{padding:32px 20px;gap:24px;flex-wrap:wrap}.project-content{padding:48px 20px}.img-grid{grid-template-columns:1fr}.project-nav{padding:40px 20px;flex-direction:column;gap:24px}footer{flex-direction:column;gap:12px;padding:24px 20px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="logo">이주형<span>.</span></a>
+  <a href="../index.html#work" class="back">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    전체 프로젝트
+  </a>
+</nav>
+
+<div class="project-hero">
+  <img src="../images/crossfire/hero.png" alt="크로스파이어">
+  <div class="project-hero-content">
+    <p class="project-tag">PC / 콘솔 — FPS</p>
+    <h1 class="project-title">크로스파이어 X / HD</h1>
+    <p class="project-subtitle">이펙트 및 배너 작업, Unreal4 Material 기반 로비 UI 연출과 다양한 시스템 개편</p>
+  </div>
+</div>
+
+<div class="project-meta">
+  <div class="meta-item"><span class="meta-label">회사</span><span class="meta-value">스마일게이트엔터테인먼트</span></div>
+  <div class="meta-item"><span class="meta-label">직급</span><span class="meta-value">UI 디자이너 (선임)</span></div>
+  <div class="meta-item"><span class="meta-label">기간</span><span class="meta-value">2022. 07 — 현재</span></div>
+  <div class="meta-item"><span class="meta-label">엔진</span><span class="meta-value">Unreal Engine 3 / 4</span></div>
+</div>
+
+<div class="project-content">
+
+  <h3 class="reveal">프로젝트 개요</h3>
+  <p class="reveal">크로스파이어 X는 Xbox 전용 콘솔 FPS, 크로스파이어 HD는 PC 기반 라이브 서비스 FPS 타이틀입니다. 이펙트 및 배너 작업을 많이 진행하였고, 크로스파이어 X의 경우 Unreal4 Material로 이펙트를 제작하여 로비 및 다양한 곳에 적용시켰습니다.</p>
+
+  <div class="img-full reveal">
+    <img src="../images/crossfire/lobby.png" alt="메인 로비" loading="lazy">
+    <p class="img-caption">크로스파이어 X — 메인 로비</p>
+  </div>
+
+  <h3 class="reveal">UI 이펙트 & Material</h3>
+  <p class="reveal">Unreal Engine Material을 활용하여 텍스트 이펙트, 부스트 연출, 로딩 화면 등 다양한 시각적 피드백을 구현했습니다. 단순한 2D UI를 넘어, Material 기반의 동적인 이펙트로 사용자 경험을 한 단계 끌어올렸습니다.</p>
+
+  <div class="img-full reveal">
+    <img src="../images/crossfire/text-effect.gif" alt="텍스트 이펙트" loading="lazy">
+    <p class="img-caption">Material 기반 텍스트 이펙트</p>
+  </div>
+
+  <div class="img-full reveal">
+    <img src="../images/crossfire/boost-vfx.gif" alt="부스트 이펙트" loading="lazy">
+    <p class="img-caption">부스트 UI 이펙트</p>
+  </div>
+
+  <h3 class="reveal">미션 & 이벤트 시스템</h3>
+  <p class="reveal">미션 이벤트 UI와 미션 완료 연출을 디자인하고 구현했습니다. 사용자가 성취감을 느낄 수 있도록 완료 시 시각적 보상 이펙트를 적용했습니다.</p>
+
+  <div class="img-full reveal">
+    <img src="../images/crossfire/mission-event.png" alt="미션 이벤트" loading="lazy">
+    <p class="img-caption">미션 이벤트 페이지</p>
+  </div>
+
+  <div class="img-full reveal">
+    <img src="../images/crossfire/mission-clear.gif" alt="미션 완료" loading="lazy">
+    <p class="img-caption">미션 완료 연출</p>
+  </div>
+
+  <h3 class="reveal">로비 개편 & 시스템 UI</h3>
+  <p class="reveal">크로스파이어 HD 신규 로비를 진행하면서 전반적인 이펙트를 담당하였으며, 기존 라이브 로비에서의 무기 숙련도, PVE 결과 창, PVE 프로필 페이지, 신규/복귀 유저 이벤트 팝업 등의 개편을 진행하였습니다.</p>
+
+  <div class="img-full reveal">
+    <img src="../images/crossfire/new-return-event.png" alt="신규 복귀 유저 이벤트" loading="lazy">
+    <p class="img-caption">신규/복귀 유저 이벤트</p>
+  </div>
+
+  <div class="img-grid reveal">
+    <img src="../images/crossfire/gun-king-rank.png" alt="총왕 랭크" loading="lazy">
+    <img src="../images/crossfire/ban-pick.png" alt="경쟁전 밴픽" loading="lazy">
+  </div>
+  <p class="img-caption reveal">총왕 랭크 시스템 / 경쟁전 밴픽 시스템</p>
+
+  <div class="img-grid reveal">
+    <img src="../images/crossfire/weapon-mastery.png" alt="무기 숙련도" loading="lazy">
+    <img src="../images/crossfire/season-rank.png" alt="시즌 계급" loading="lazy">
+  </div>
+  <p class="img-caption reveal">무기 숙련도 시스템 / 시즌 계급 시스템</p>
+
+  <h3 class="reveal">PVE 콘텐츠</h3>
+  <p class="reveal">PVE 프로필 페이지, 마스터 해금 연출, 무기 축복 시스템 등 PVE 관련 전반적인 UI와 연출을 담당하였습니다.</p>
+
+  <div class="img-full reveal">
+    <img src="../images/crossfire/pve-profile.png" alt="PVE 프로필" loading="lazy">
+    <p class="img-caption">PVE 프로필 페이지</p>
+  </div>
+
+  <div class="img-grid reveal">
+    <img src="../images/crossfire/pve-master-unlock.png" alt="PVE 마스터 해금" loading="lazy">
+    <img src="../images/crossfire/pve-weapon-blessing.png" alt="PVE 무기 축복" loading="lazy">
+  </div>
+  <p class="img-caption reveal">PVE 마스터 해금 / 무기 축복 연출</p>
+
+  <div class="img-full reveal">
+    <img src="../images/crossfire/pve-weapon-blessing-detail.gif" alt="무기 축복 상세" loading="lazy">
+    <p class="img-caption">무기 축복 상세 연출</p>
+  </div>
+
+  <div class="img-grid reveal">
+    <img src="../images/crossfire/rank-season-change.png" alt="랭크전 시즌 변경" loading="lazy">
+    <img src="../images/crossfire/paid-battlepass.png" alt="유료 배틀패스" loading="lazy">
+  </div>
+  <p class="img-caption reveal">랭크전 시즌 변경 / 유료 배틀패스 구매</p>
+
+  <div class="thankyou reveal">
+    <p>Thank you for watching</p>
+  </div>
+
+</div>
+
+<div class="project-nav">
+  <a href="../index.html#work">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    전체 프로젝트
+  </a>
+  <a href="chrono.html">
+    다음 — 크로노 오디세이
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</div>
+
+<footer>
+  <p class="copy">&copy; 2026 이주형</p>
+  <div class="links"><a href="../index.html">홈</a><a href="/cdn-cgi/l/email-protection#bfc7cfd9d4cc868a8effd8d2ded6d391dcd0d2">이메일</a></div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const reveals=document.querySelectorAll('.reveal');const observer=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.ta
