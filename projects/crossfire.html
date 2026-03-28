@@ -36,9 +36,12 @@ nav .back{font-size:13px;color:#fff;display:flex;align-items:center;gap:8px;tran
 .project-content p{font-size:15px;color:var(--text-dim);line-height:1.8;margin-bottom:24px;max-width:720px}
 .img-full{margin:40px 0;border-radius:12px;overflow:hidden}
 .img-full img{width:100%;display:block}
-.img-grid{display:grid;grid-template-columns:1fr;gap:16px;margin:40px 0}
+.img-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:40px 0}
 .img-grid img{border-radius:12px}
 .img-caption{font-size:12px;color:var(--text-muted);margin-top:8px;text-align:center}
+
+.video-full{margin:40px 0;border-radius:12px;overflow:hidden;position:relative;padding-bottom:56.25%;height:0}
+.video-full iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;border-radius:12px}
 
 .project-nav{display:flex;justify-content:space-between;align-items:center;padding:60px 40px;border-top:1px solid rgba(255,255,255,.05)}
 .project-nav a{font-size:13px;color:var(--text-dim);transition:color .3s;display:flex;align-items:center;gap:8px}
@@ -51,7 +54,7 @@ footer .links{display:flex;gap:24px}footer .links a{font-size:12px;color:var(--t
 .reveal{opacity:0;transform:translateY(30px);transition:all .7s cubic-bezier(.25,.46,.45,.94)}.reveal.visible{opacity:1;transform:translateY(0)}
 .thankyou{text-align:center;padding:80px 0 40px;border-top:1px solid rgba(255,255,255,.05);margin-top:64px}
 .thankyou p{font-size:clamp(20px,3vw,32px);font-weight:300;color:var(--text-muted);letter-spacing:2px}
-@media(max-width:768px){nav{padding:16px 20px}.project-hero-content{padding:40px 20px}.project-meta{padding:32px 20px;gap:24px;flex-wrap:wrap}.project-content{padding:48px 20px}.img-grid{grid-template-columns:1fr}.project-nav{padding:40px 20px;flex-direction:column;gap:24px}footer{flex-direction:column;gap:12px;padding:24px 20px}}
+@media(max-width:768px){nav{padding:16px 20px}.project-hero-content{padding:40px 20px}.project-meta{padding:32px 20px;gap:24px;flex-wrap:wrap}.project-content{padding:48px 20px}.img-grid{grid-template-columns:1fr}.project-nav{padding:40px 20px;flex-direction:column;gap:24px}footer{flex-direction:column;gap:12px;padding:24px 20px}.video-full{margin:24px 0}}
 </style>
 </head>
 <body>
@@ -86,12 +89,20 @@ footer .links{display:flex;gap:24px}footer .links a{font-size:12px;color:var(--t
     <img src="../images/crossfire/lobby.png" alt="메인 로비">
   </div>
 
+  <div class="video-full reveal">
+    <iframe src="https://www.youtube.com/embed/Praqp0vYpPc" title="크로스파이어 영상" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
   <div class="img-full reveal">
     <img src="../images/crossfire/text-effect.gif" alt="텍스트 이펙트">
   </div>
 
   <div class="img-full reveal">
-    <img src="../images/crossfire/boost-vfx.gif" alt="부스트 이펙트">
+    <img src="../images/crossfire/boost-vfx.gif" alt="부스트 VFX">
+  </div>
+
+  <div class="img-full reveal">
+    <img src="../images/crossfire/loading-fx.gif" alt="로딩 이펙트">
   </div>
 
   <div class="img-full reveal">
@@ -103,59 +114,148 @@ footer .links{display:flex;gap:24px}footer .links a{font-size:12px;color:var(--t
   </div>
 
   <div class="img-full reveal">
-    <img src="../images/crossfire/new-return-event.png" alt="신규 복귀 유저 이벤트">
+    <img src="../images/crossfire/lobby-effect-banner.png" alt="로비 이펙트 배너">
   </div>
 
-  <div class="img-grid reveal">
+  <div class="video-full reveal">
+    <iframe src="https://www.youtube.com/embed/KOq2vr8u5_Y" title="크로스파이어 영상" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="video-full reveal">
+    <iframe src="https://www.youtube.com/embed/xseVyGC6DNo" title="크로스파이어 영상" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="video-full reveal">
+    <iframe src="https://www.youtube.com/embed/2rX2v_M-Lww" title="크로스파이어 영상" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="video-full reveal">
+    <iframe src="https://www.youtube.com/embed/Zoz2Axqs82I" title="크로스파이어 영상" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="video-full reveal">
+    <iframe src="https://www.youtube.com/embed/46znTFx-N40" title="크로스파이어 영상" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="video-full reveal">
+    <iframe src="https://www.youtube.com/embed/KrTo6HvJ8T0" title="크로스파이어 영상" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="video-full reveal">
+    <iframe src="https://www.youtube.com/embed/PN2qLJceXEs" title="크로스파이어 영상" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="img-full reveal">
+    <img src="../images/crossfire/new-return-event.png" alt="신규/복귀 유저 이벤트">
+  </div>
+
+  <div class="video-full reveal">
+    <iframe src="https://www.youtube.com/embed/2q--uYyvi-w" title="크로스파이어 영상" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="video-full reveal">
+    <iframe src="https://www.youtube.com/embed/Htk-BFf4mQs" title="크로스파이어 영상" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="img-full reveal">
     <img src="../images/crossfire/gun-king-rank.png" alt="총왕 랭크">
+  </div>
+
+  <div class="video-full reveal">
+    <iframe src="https://www.youtube.com/embed/rkHDA-76G3A" title="크로스파이어 영상" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="img-full reveal">
     <img src="../images/crossfire/ban-pick.png" alt="경쟁전 밴픽">
   </div>
 
-  <div class="img-grid reveal">
-    <img src="../images/crossfire/weapon-mastery.png" alt="무기 숙련도">
+  <div class="video-full reveal">
+    <iframe src="https://www.youtube.com/embed/pN1bpux7oHg" title="크로스파이어 영상" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="video-full reveal">
+    <iframe src="https://www.youtube.com/embed/KYthP_-vjIU" title="크로스파이어 영상" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="img-full reveal">
+    <img src="../images/crossfire/gun-king-rank.png" alt="총왕 랭크">
+  </div>
+
+  <div class="img-full reveal">
     <img src="../images/crossfire/season-rank.png" alt="시즌 계급">
+  </div>
+
+  <div class="video-full reveal">
+    <iframe src="https://www.youtube.com/embed/-zTvSy7cJ4U" title="크로스파이어 영상" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 
   <div class="img-full reveal">
     <img src="../images/crossfire/pve-profile.png" alt="PVE 프로필">
   </div>
 
-  <div class="img-grid reveal">
+  <div class="img-full reveal">
     <img src="../images/crossfire/pve-master-unlock.png" alt="PVE 마스터 해금">
+  </div>
+
+  <div class="video-full reveal">
+    <iframe src="https://www.youtube.com/embed/kMmhYdZGcII" title="크로스파이어 영상" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="img-full reveal">
     <img src="../images/crossfire/pve-weapon-blessing.png" alt="PVE 무기 축복">
   </div>
 
   <div class="img-full reveal">
-    <img src="../images/crossfire/pve-weapon-blessing-detail.gif" alt="무기 축복 상세">
+    <img src="../images/crossfire/pve-weapon-blessing-detail.gif" alt="PVE 무기 축복 상세">
   </div>
 
-  <div class="img-grid reveal">
-    <img src="../images/crossfire/rank-season-change.png" alt="랭크전 시즌 변경">
+  <div class="img-full reveal">
+    <img src="../images/crossfire/rank-season-change.png" alt="시즌 계급 변경">
+  </div>
+
+  <div class="video-full reveal">
+    <iframe src="https://www.youtube.com/embed/LpNRYElu_gc" title="크로스파이어 영상" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="video-full reveal">
+    <iframe src="https://www.youtube.com/embed/LsTfuPZzXsQ" title="크로스파이어 영상" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="img-full reveal">
     <img src="../images/crossfire/paid-battlepass.png" alt="유료 배틀패스">
+  </div>
+
+  <div class="video-full reveal">
+    <iframe src="https://www.youtube.com/embed/EMq1HY34KTY" title="크로스파이어 영상" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="thankyou reveal">
+    <p>Thank you for watching</p>
   </div>
 
 </div>
 
 <div class="project-nav">
-  <a href="../index.html#work">
-    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    전체 프로젝트
+  <a href="justcause.html">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    이전 프로젝트
   </a>
   <a href="chrono.html">
-    다음 — 크로노 오디세이
-    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    다음 프로젝트
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </a>
 </div>
 
 <footer>
-  <p class="copy">&copy; 2026 이주형</p>
-  <div class="links"><a href="../index.html">홈</a><a href="mailto:xpfks951@naver.com">이메일</a></div>
+  <span class="copy">&copy; 2025 이주형</span>
+  <div class="links">
+    <a href="mailto:xpfks951@naver.com">이메일</a>
+  </div>
 </footer>
 
 <script>
-const reveals=document.querySelectorAll('.reveal');
-const observer=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
-reveals.forEach(el=>observer.observe(el));
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
 </body>
 </html>
