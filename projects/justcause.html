@@ -9,11 +9,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}:root{--bg:#0a0a0c;--bg2:#111114;--bg3:#1a1a1f;--text:#e8e6e1;--text-dim:#8a8880;--text-muted:#555550;--accent:#c8ff00;--accent2:#00e5ff;--accent3:#ff3d5a;--font-main:'Pretendard Variable','Pretendard',sans-serif;--font-mono:'Space Mono',monospace}html{scroll-behavior:smooth;overflow-x:hidden}body{background:var(--bg);color:var(--text);font-family:var(--font-main);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}::selection{background:var(--accent);color:var(--bg)}img{max-width:100%;display:block}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;mix-blend-mode:difference}nav .logo{font-weight:800;font-size:20px;color:#fff}nav .logo span{color:var(--accent)}nav .back{font-size:13px;color:#fff;display:flex;align-items:center;gap:8px;transition:color .3s}nav .back:hover{color:var(--accent)}nav .back svg{transition:transform .3s}nav .back:hover svg{transform:translateX(-4px)}
-.project-hero{height:70vh;min-height:480px;position:relative;overflow:hidden;display:flex;align-items:flex-end}.project-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}.project-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,var(--bg) 0%,rgba(10,10,12,.3) 50%,rgba(10,10,12,.6) 100%)}.project-hero-content{position:relative;z-index:1;padding:60px 40px;width:100%}.project-tag{font-family:var(--font-mono);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}.project-title{font-weight:900;font-size:clamp(36px,6vw,72px);letter-spacing:-2px;line-height:1}.project-subtitle{font-size:16px;color:var(--text-dim);margin-top:12px;max-width:600px;line-height:1.6}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}:root{--bg:#000000;--bg2:#111114;--bg3:#1a1a1f;--text:#e8e6e1;--text-dim:#8a8880;--text-muted:#555550;--accent:#c8ff00;--accent2:#00e5ff;--accent3:#ff3d5a;--font-main:'Pretendard Variable','Pretendard',sans-serif;--font-mono:'Space Mono',monospace}html{scroll-behavior:smooth;overflow-x:hidden}body{background:var(--bg);color:var(--text);font-family:var(--font-main);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}::selection{background:var(--accent);color:var(--bg)}img{max-width:100%;display:block}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;background:var(--bg)}nav .logo{font-weight:800;font-size:20px;color:#fff}nav .logo span{color:var(--accent)}nav .back{font-size:13px;color:#fff;display:flex;align-items:center;gap:8px;transition:color .3s}nav .back:hover{color:var(--accent)}nav .back svg{transition:transform .3s}nav .back:hover svg{transform:translateX(-4px)}
+.project-hero{height:70vh;min-height:480px;position:relative;overflow:hidden;display:flex;align-items:flex-end}.project-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}.project-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,var(--bg) 0%,rgba(0,0,0,.3) 50%,rgba(0,0,0,.6) 100%)}.project-hero-content{position:relative;z-index:1;padding:60px 40px;width:100%}.project-tag{font-family:var(--font-mono);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}.project-title{font-weight:900;font-size:clamp(36px,6vw,72px);letter-spacing:-2px;line-height:1}.project-subtitle{font-size:16px;color:var(--text-dim);margin-top:12px;max-width:600px;line-height:1.6}
 .project-meta{display:flex;gap:48px;padding:48px 40px;border-bottom:1px solid rgba(255,255,255,.05)}.meta-item{display:flex;flex-direction:column;gap:4px}.meta-label{font-family:var(--font-mono);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted)}.meta-value{font-size:14px;color:var(--text-dim)}
-.project-content{max-width:1200px;margin:0 auto;padding:80px 40px}.project-content h3{font-weight:700;font-size:24px;letter-spacing:-1px;margin:64px 0 24px;padding-top:32px;border-top:1px solid rgba(255,255,255,.05)}.project-content h3:first-child{margin-top:0;border-top:none;padding-top:0}.project-content p{font-size:15px;color:var(--text-dim);line-height:1.8;margin-bottom:24px;max-width:720px}.img-full{margin:40px 0;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.05)}.img-full img{width:100%}.img-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:40px 0}.img-grid img{border-radius:8px;border:1px solid rgba(255,255,255,.05)}.img-caption{font-size:12px;color:var(--text-muted);margin-top:8px;text-align:center}
+.project-content{max-width:1200px;margin:0 auto;padding:80px 40px}.project-content h3{font-weight:700;font-size:24px;letter-spacing:-1px;margin:64px 0 24px;padding-top:32px;border-top:1px solid rgba(255,255,255,.05)}.project-content h3:first-child{margin-top:0;border-top:none;padding-top:0}.project-content p{font-size:15px;color:var(--text-dim);line-height:1.8;margin-bottom:24px;max-width:720px}.img-full{margin:40px 0;border-radius:12px;overflow:hidden}.img-full img{width:100%}.img-grid{display:grid;grid-template-columns:1fr;gap:16px;margin:40px 0}.img-grid img{border-radius:12px}.img-caption{font-size:12px;color:var(--text-muted);margin-top:8px;text-align:center}
 .project-nav{display:flex;justify-content:space-between;align-items:center;padding:60px 40px;border-top:1px solid rgba(255,255,255,.05)}.project-nav a{font-size:13px;color:var(--text-dim);transition:color .3s;display:flex;align-items:center;gap:8px}.project-nav a:hover{color:var(--accent)}
 footer{padding:40px;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;align-items:center}footer .copy{font-family:var(--font-mono);font-size:11px;color:var(--text-muted)}footer .links{display:flex;gap:24px}footer .links a{font-size:12px;color:var(--text-muted);transition:color .3s}footer .links a:hover{color:var(--accent)}
 .reveal{opacity:0;transform:translateY(30px);transition:all .7s cubic-bezier(.25,.46,.45,.94)}.reveal.visible{opacity:1;transform:translateY(0)}
@@ -29,7 +29,7 @@ footer{padding:40px;border-top:1px solid rgba(255,255,255,.05);display:flex;just
 </nav>
 
 <div class="project-hero">
-  <img src="../images/justcause/main.png" alt="저스트 코즈 모바일">
+  <img src="../images/justcause/sub_main.png" alt="저스트 코즈 모바일">
   <div class="project-hero-content">
     <p class="project-tag">모바일 — TPS / RPG</p>
     <h1 class="project-title">저스트 코즈 모바일</h1>
@@ -45,34 +45,17 @@ footer{padding:40px;border-top:1px solid rgba(255,255,255,.05);display:flex;just
 </div>
 
 <div class="project-content">
-  <h3 class="reveal">프로젝트 개요</h3>
-  <p class="reveal">저스트 코즈 모바일은 모바일 TPS/RPG 게임으로, 로비 및 전투 버프/디버프 아이콘을 담당했으며 인벤토리, 무기 강화 시스템을 개발하고 강화에 필요한 이펙트를 Material로 제작하여 적용하였습니다.</p>
+  <div class="img-full reveal"><img src="../images/justcause/main.png" alt="메인"></div>
 
-  <div class="img-full reveal"><img src="../images/justcause/main.png" alt="메인" loading="lazy"><p class="img-caption">저스트 코즈 모바일 — 메인 비주얼</p></div>
-
-  <h3 class="reveal">인게임 HUD & 시스템</h3>
-  <p class="reveal">모바일 환경에 최적화된 HUD와 인벤토리 시스템을 디자인했습니다. 제한된 화면 안에서 정보의 우선순위를 정리하고, 터치 기반의 직관적인 인터페이스를 구현했습니다.</p>
-
-  <div class="img-full reveal"><img src="../images/justcause/hud.png" alt="HUD" loading="lazy"><p class="img-caption">인게임 HUD</p></div>
-  <div class="img-full reveal"><img src="../images/justcause/inventory.png" alt="인벤토리" loading="lazy"><p class="img-caption">인벤토리 시스템</p></div>
-
-  <h3 class="reveal">월드맵 & 던전</h3>
-  <p class="reveal">월드맵 내비게이션과 던전 진입 UI를 디자인하여 플레이어가 게임 세계를 탐색하는 경험을 설계했습니다.</p>
+  <div class="img-full reveal"><img src="../images/justcause/hud.png" alt="HUD"></div>
+  <div class="img-full reveal"><img src="../images/justcause/inventory.png" alt="인벤토리"></div>
 
   <div class="img-grid reveal">
-    <img src="../images/justcause/worldmap.png" alt="월드맵" loading="lazy">
-    <img src="../images/justcause/dungeon.png" alt="던전" loading="lazy">
+    <img src="../images/justcause/worldmap.png" alt="월드맵">
+    <img src="../images/justcause/dungeon.png" alt="던전">
   </div>
-  <p class="img-caption reveal">월드맵 / 던전 UI</p>
 
-  <h3 class="reveal">아이콘 디자인</h3>
-  <p class="reveal">게임 내 아이템, 스킬, 버프/디버프 아이콘 세트를 디자인했습니다.</p>
-
-  <div class="img-full reveal"><img src="../images/justcause/icons.png" alt="아이콘" loading="lazy"><p class="img-caption">아이콘 세트</p></div>
-
-  <div class="thankyou reveal">
-    <p>Thank you for watching</p>
-  </div>
+  <div class="img-full reveal"><img src="../images/justcause/icons.png" alt="아이콘"></div>
 </div>
 
 <div class="project-nav">
@@ -80,6 +63,15 @@ footer{padding:40px;border-top:1px solid rgba(255,255,255,.05);display:flex;just
   <a href="../index.html#work">전체 프로젝트<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </div>
 
-<footer><p class="copy">&copy; 2026 이주형</p><div class="links"><a href="../index.html">홈</a><a href="/cdn-cgi/l/email-protection#aad2daccc1d9939f9beacdc7cbc3c684c9c5c7">이메일</a></div></footer>
+<footer>
+  <p class="copy">&copy; 2026 이주형</p>
+  <div class="links"><a href="../index.html">홈</a><a href="mailto:xpfks951@naver.com">이메일</a></div>
+</footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>const reveals=document.querySelectorAll('.reveal');const observer=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.t
+<script>
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+reveals.forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

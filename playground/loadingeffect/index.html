@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FlipBook Animation — 이주형 포트폴리오</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#000000;--bg2:#111114;--bg3:#1a1a1f;--text:#e8e6e1;--text-dim:#8a8880;--text-muted:#555550;--accent:#c8ff00;--accent2:#00e5ff;--accent3:#ff3d5a;--font-main:'Pretendard Variable','Pretendard',sans-serif;--font-mono:'Space Mono',monospace}
+html{scroll-behavior:smooth;overflow-x:hidden}body{background:var(--bg);color:var(--text);font-family:var(--font-main);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}::selection{background:var(--accent);color:var(--bg)}img{max-width:100%;display:block}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;background:var(--bg)}
+nav .logo{font-weight:800;font-size:20px;color:#fff}nav .logo span{color:var(--accent)}
+nav .back{font-size:13px;color:#fff;display:flex;align-items:center;gap:8px;transition:color .3s}nav .back:hover{color:var(--accent)}nav .back svg{transition:transform .3s}nav .back:hover svg{transform:translateX(-4px)}
+
+.page-header{padding:120px 40px 60px;max-width:1200px;margin:0 auto}
+.page-tag{font-family:var(--font-mono);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.page-title{font-weight:900;font-size:clamp(32px,5vw,56px);letter-spacing:-2px;line-height:1.1}
+.page-subtitle{font-size:16px;color:var(--text-dim);margin-top:16px;max-width:700px;line-height:1.6}
+
+.project-content{max-width:1200px;margin:0 auto;padding:0 40px 80px}
+.project-content h3{font-weight:700;font-size:22px;letter-spacing:-0.5px;margin:56px 0 20px;padding-top:32px;border-top:1px solid rgba(255,255,255,.05)}
+.project-content h3:first-child{margin-top:0;border-top:none;padding-top:0}
+.project-content p{font-size:15px;color:var(--text-dim);line-height:1.8;margin-bottom:16px;max-width:800px}
+.img-full{margin:32px 0;border-radius:12px;overflow:hidden}
+.img-full img{width:100%;display:block;border-radius:12px}
+
+footer{padding:40px;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto}
+footer .copy{font-family:var(--font-mono);font-size:11px;color:var(--text-muted)}
+footer .links{display:flex;gap:24px}footer .links a{font-size:12px;color:var(--text-muted);transition:color .3s}footer .links a:hover{color:var(--accent)}
+
+.reveal{opacity:0;transform:translateY(30px);transition:all .7s cubic-bezier(.25,.46,.45,.94)}.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:768px){nav{padding:16px 20px}.page-header{padding:100px 20px 40px}.project-content{padding:0 20px 48px}footer{flex-direction:column;gap:12px;padding:24px 20px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../../index.html" class="logo">이주형<span>.</span></a>
+  <a href="../../index.html#playground" class="back">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    실험실
+  </a>
+</nav>
+
+<div class="page-header">
+  <p class="page-tag">UE5 Material — 로딩 이펙트</p>
+  <h1 class="page-title">FlipBook Animation</h1>
+  <p class="page-subtitle">기본 제공하는 UE5 Material Function FlipBook 을 활용하여 간단하게 연출 만들기</p>
+</div>
+
+<div class="project-content">
+<div class="img-full reveal"><img src="images/01_hero.gif" alt="FlipBook Animation" loading="lazy"></div>
+<h3 class="reveal">2D 스프라이트 제작</h3>
+<p class="reveal">스프라이트 이미지는 Adobe After Effects 및 Photoshop에서 제작할 수 있습니다.</p>
+<p class="reveal">머티리얼 노드에 올바르게 매핑되도록 하기 위해, 텍스처의 해상도를 2의 거듭제곱(예: 256x256, 512x512, 1024x1024 등)으로 설정하는 것이 권장됩니다.</p>
+<p class="reveal">이를 통해 최적화된 샘플링과 GPU 메모리 효율성을 확보할 수 있으며, 언리얼 엔진의 텍스처 필터링 및 MipMap 생성 과정에서 예상치 못한 왜곡을 방지할 수 있습니다.</p>
+<div class="img-full reveal"><img src="images/02_detail.png" alt="FlipBook Animation" loading="lazy"></div>
+<h3 class="reveal">노드 풀이</h3>
+<p class="reveal">FlipBook 노드</p>
+<p class="reveal">Animation Phase (0-1): Frac 노드에서 받은 0~1 값이 입력됨. (이 값이 애니메이션의 속도)</p>
+<p class="reveal">Number of Rows: 세로 값 입력</p>
+<p class="reveal">Number of Columns: 가로 값 입력</p>
+<p class="reveal">UVs 출력: Flipbook UV 좌표를 계산하여, Texture Sample에 연결하면 스프라이트 시트의 각 프레임을 순차적으로 표시.</p>
+<div class="img-full reveal"><img src="images/03_node.png" alt="FlipBook Animation" loading="lazy"></div>
+<p class="reveal">자주 사용하게 되는 노드 설명</p>
+<p class="reveal">FlipBook : 2D 스프라이트 애니메이션을 위한 기법으로, 여러 개의 프레임이 포함된 텍스처를 활용하여 순차적으로 재생합니다.</p>
+
+</div>
+
+<footer>
+  <span class="copy">&copy; 2026 이주형. All rights reserved.</span>
+  <div class="links">
+    <a href="../../index.html#playground">실험실</a>
+    <a href="../../index.html">홈</a>
+  </div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

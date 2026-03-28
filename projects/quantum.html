@@ -9,11 +9,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}:root{--bg:#0a0a0c;--bg2:#111114;--bg3:#1a1a1f;--text:#e8e6e1;--text-dim:#8a8880;--text-muted:#555550;--accent:#c8ff00;--accent2:#00e5ff;--accent3:#ff3d5a;--font-main:'Pretendard Variable','Pretendard',sans-serif;--font-mono:'Space Mono',monospace}html{scroll-behavior:smooth;overflow-x:hidden}body{background:var(--bg);color:var(--text);font-family:var(--font-main);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}::selection{background:var(--accent);color:var(--bg)}img{max-width:100%;display:block}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;mix-blend-mode:difference}nav .logo{font-weight:800;font-size:20px;color:#fff}nav .logo span{color:var(--accent)}nav .back{font-size:13px;color:#fff;display:flex;align-items:center;gap:8px;transition:color .3s}nav .back:hover{color:var(--accent)}nav .back svg{transition:transform .3s}nav .back:hover svg{transform:translateX(-4px)}
-.project-hero{height:70vh;min-height:480px;position:relative;overflow:hidden;display:flex;align-items:flex-end}.project-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}.project-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,var(--bg) 0%,rgba(10,10,12,.3) 50%,rgba(10,10,12,.6) 100%)}.project-hero-content{position:relative;z-index:1;padding:60px 40px;width:100%}.project-tag{font-family:var(--font-mono);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}.project-title{font-weight:900;font-size:clamp(36px,6vw,72px);letter-spacing:-2px;line-height:1}.project-subtitle{font-size:16px;color:var(--text-dim);margin-top:12px;max-width:600px;line-height:1.6}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}:root{--bg:#000000;--bg2:#111114;--bg3:#1a1a1f;--text:#e8e6e1;--text-dim:#8a8880;--text-muted:#555550;--accent:#c8ff00;--accent2:#00e5ff;--accent3:#ff3d5a;--font-main:'Pretendard Variable','Pretendard',sans-serif;--font-mono:'Space Mono',monospace}html{scroll-behavior:smooth;overflow-x:hidden}body{background:var(--bg);color:var(--text);font-family:var(--font-main);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}::selection{background:var(--accent);color:var(--bg)}img{max-width:100%;display:block}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;background:var(--bg)}nav .logo{font-weight:800;font-size:20px;color:#fff}nav .logo span{color:var(--accent)}nav .back{font-size:13px;color:#fff;display:flex;align-items:center;gap:8px;transition:color .3s}nav .back:hover{color:var(--accent)}nav .back svg{transition:transform .3s}nav .back:hover svg{transform:translateX(-4px)}
+.project-hero{height:70vh;min-height:480px;position:relative;overflow:hidden;display:flex;align-items:flex-end}.project-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}.project-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,var(--bg) 0%,rgba(0,0,0,.3) 50%,rgba(0,0,0,.6) 100%)}.project-hero-content{position:relative;z-index:1;padding:60px 40px;width:100%}.project-tag{font-family:var(--font-mono);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}.project-title{font-weight:900;font-size:clamp(36px,6vw,72px);letter-spacing:-2px;line-height:1}.project-subtitle{font-size:16px;color:var(--text-dim);margin-top:12px;max-width:600px;line-height:1.6}
 .project-meta{display:flex;gap:48px;padding:48px 40px;border-bottom:1px solid rgba(255,255,255,.05)}.meta-item{display:flex;flex-direction:column;gap:4px}.meta-label{font-family:var(--font-mono);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted)}.meta-value{font-size:14px;color:var(--text-dim)}
-.project-content{max-width:1200px;margin:0 auto;padding:80px 40px}.project-content h3{font-weight:700;font-size:24px;letter-spacing:-1px;margin:64px 0 24px;padding-top:32px;border-top:1px solid rgba(255,255,255,.05)}.project-content h3:first-child{margin-top:0;border-top:none;padding-top:0}.project-content p{font-size:15px;color:var(--text-dim);line-height:1.8;margin-bottom:24px;max-width:720px}.img-full{margin:40px 0;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.05)}.img-full img{width:100%}.img-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:40px 0}.img-grid img{border-radius:8px;border:1px solid rgba(255,255,255,.05)}.img-caption{font-size:12px;color:var(--text-muted);margin-top:8px;text-align:center}
+.project-content{max-width:1200px;margin:0 auto;padding:80px 40px}.project-content h3{font-weight:700;font-size:24px;letter-spacing:-1px;margin:64px 0 24px;padding-top:32px;border-top:1px solid rgba(255,255,255,.05)}.project-content h3:first-child{margin-top:0;border-top:none;padding-top:0}.project-content p{font-size:15px;color:var(--text-dim);line-height:1.8;margin-bottom:24px;max-width:720px}.img-full{margin:40px 0;border-radius:12px;overflow:hidden}.img-full img{width:100%}.img-grid{display:grid;grid-template-columns:1fr;gap:16px;margin:40px 0}.img-grid img{border-radius:12px}.img-caption{font-size:12px;color:var(--text-muted);margin-top:8px;text-align:center}
 .project-nav{display:flex;justify-content:space-between;align-items:center;padding:60px 40px;border-top:1px solid rgba(255,255,255,.05)}.project-nav a{font-size:13px;color:var(--text-dim);transition:color .3s;display:flex;align-items:center;gap:8px}.project-nav a:hover{color:var(--accent)}
 footer{padding:40px;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;align-items:center}footer .copy{font-family:var(--font-mono);font-size:11px;color:var(--text-muted)}footer .links{display:flex;gap:24px}footer .links a{font-size:12px;color:var(--text-muted);transition:color .3s}footer .links a:hover{color:var(--accent)}
 .reveal{opacity:0;transform:translateY(30px);transition:all .7s cubic-bezier(.25,.46,.45,.94)}.reveal.visible{opacity:1;transform:translateY(0)}
@@ -29,7 +29,7 @@ footer{padding:40px;border-top:1px solid rgba(255,255,255,.05);display:flex;just
 </nav>
 
 <div class="project-hero">
-  <img src="../images/quantum/main.png" alt="퀀텀 나이츠">
+  <img src="../images/quantum/sub_main.png" alt="퀀텀 나이츠">
   <div class="project-hero-content">
     <p class="project-tag">PC — RPG</p>
     <h1 class="project-title">퀀텀 나이츠</h1>
@@ -45,46 +45,30 @@ footer{padding:40px;border-top:1px solid rgba(255,255,255,.05);display:flex;just
 </div>
 
 <div class="project-content">
-  <h3 class="reveal">프로젝트 개요</h3>
-  <p class="reveal">퀀텀 나이츠는 라인게임즈 산하 스페이스다이브에서 개발한 PC RPG입니다. 인게임 HUD 및 스킬 아이콘과 강화를 담당했으며, 인터랙션 및 강화에 필요한 곳에 이펙트를 추가하고 가이드를 제작하여 팀원들에게 공유하였습니다.</p>
+  <div class="img-full reveal"><img src="../images/quantum/main.png" alt="메인"></div>
 
-  <div class="img-full reveal"><img src="../images/quantum/main.png" alt="메인" loading="lazy"><p class="img-caption">퀀텀 나이츠 — 메인 비주얼</p></div>
-
-  <h3 class="reveal">HUD 디자인</h3>
-  <p class="reveal">전투 중 플레이어에게 필요한 정보를 직관적으로 전달하는 HUD를 설계했습니다. 연속킬 팝업, 레벨업, 필드보스 처치 등 상황별 피드백 UI를 구현했습니다.</p>
-
-  <div class="img-full reveal"><img src="../images/quantum/hud.png" alt="HUD" loading="lazy"><p class="img-caption">인게임 HUD 디자인</p></div>
+  <div class="img-full reveal"><img src="../images/quantum/hud.png" alt="HUD"></div>
 
   <div class="img-grid reveal">
-    <img src="../images/quantum/multi-kill.png" alt="연속킬" loading="lazy">
-    <img src="../images/quantum/level-up.png" alt="레벨업" loading="lazy">
+    <img src="../images/quantum/multi-kill.png" alt="연속킬">
+    <img src="../images/quantum/level-up.png" alt="레벨업">
   </div>
-  <p class="img-caption reveal">연속킬 팝업 / 레벨업 연출</p>
 
   <div class="img-grid reveal">
-    <img src="../images/quantum/multi-kill-motion.gif" alt="연속킬 모션" loading="lazy">
-    <img src="../images/quantum/level-up-motion.gif" alt="레벨업 모션" loading="lazy">
+    <img src="../images/quantum/multi-kill-motion.gif" alt="연속킬 모션">
+    <img src="../images/quantum/level-up-motion.gif" alt="레벨업 모션">
   </div>
-  <p class="img-caption reveal">연속킬 모션 / 레벨업 모션</p>
 
-  <div class="img-full reveal"><img src="../images/quantum/field-boss.png" alt="필드보스" loading="lazy"><p class="img-caption">필드보스 처치 시 연출</p></div>
+  <div class="img-full reveal"><img src="../images/quantum/field-boss.png" alt="필드보스"></div>
 
-  <div class="img-full reveal"><img src="../images/quantum/field-boss-motion.gif" alt="필드보스 모션" loading="lazy"><p class="img-caption">필드보스 처치 모션</p></div>
-
-  <h3 class="reveal">무기 모드 & 합성 시스템</h3>
-  <p class="reveal">무기 모드 전환 시스템과 합성 UI를 디자인하고, 시각적 피드백을 위한 Material 이펙트를 적용했습니다.</p>
+  <div class="img-full reveal"><img src="../images/quantum/field-boss-motion.gif" alt="필드보스 모션"></div>
 
   <div class="img-grid reveal">
-    <img src="../images/quantum/weapon-mode.png" alt="무기 모드" loading="lazy">
-    <img src="../images/quantum/weapon-synthesis.png" alt="무기 합성" loading="lazy">
+    <img src="../images/quantum/weapon-mode.png" alt="무기 모드">
+    <img src="../images/quantum/weapon-synthesis.png" alt="무기 합성">
   </div>
-  <p class="img-caption reveal">무기 모드 시스템 / 무기 모드 합성</p>
 
-  <div class="img-full reveal"><img src="../images/quantum/weapon-synthesis-motion.gif" alt="무기 합성 모션" loading="lazy"><p class="img-caption">무기 합성 모션</p></div>
-
-  <div class="thankyou reveal">
-    <p>Thank you for watching</p>
-  </div>
+  <div class="img-full reveal"><img src="../images/quantum/weapon-synthesis-motion.gif" alt="무기 합성 모션"></div>
 </div>
 
 <div class="project-nav">
@@ -92,6 +76,15 @@ footer{padding:40px;border-top:1px solid rgba(255,255,255,.05);display:flex;just
   <a href="justcause.html">다음 — 저스트 코즈<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </div>
 
-<footer><p class="copy">&copy; 2026 이주형</p><div class="links"><a href="../index.html">홈</a><a href="/cdn-cgi/l/email-protection#f48c84929f87cdc1c5b49399959d98da979b99">이메일</a></div></footer>
+<footer>
+  <p class="copy">&copy; 2026 이주형</p>
+  <div class="links"><a href="../index.html">홈</a><a href="mailto:xpfks951@naver.com">이메일</a></div>
+</footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>const reveals=document.querySelectorAll('.reveal');const observer=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.t
+<script>
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+reveals.forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

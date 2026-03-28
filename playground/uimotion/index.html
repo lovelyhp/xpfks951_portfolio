@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interaction Wave — 이주형 포트폴리오</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#000000;--bg2:#111114;--bg3:#1a1a1f;--text:#e8e6e1;--text-dim:#8a8880;--text-muted:#555550;--accent:#c8ff00;--accent2:#00e5ff;--accent3:#ff3d5a;--font-main:'Pretendard Variable','Pretendard',sans-serif;--font-mono:'Space Mono',monospace}
+html{scroll-behavior:smooth;overflow-x:hidden}body{background:var(--bg);color:var(--text);font-family:var(--font-main);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}::selection{background:var(--accent);color:var(--bg)}img{max-width:100%;display:block}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;background:var(--bg)}
+nav .logo{font-weight:800;font-size:20px;color:#fff}nav .logo span{color:var(--accent)}
+nav .back{font-size:13px;color:#fff;display:flex;align-items:center;gap:8px;transition:color .3s}nav .back:hover{color:var(--accent)}nav .back svg{transition:transform .3s}nav .back:hover svg{transform:translateX(-4px)}
+
+.page-header{padding:120px 40px 60px;max-width:1200px;margin:0 auto}
+.page-tag{font-family:var(--font-mono);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.page-title{font-weight:900;font-size:clamp(32px,5vw,56px);letter-spacing:-2px;line-height:1.1}
+.page-subtitle{font-size:16px;color:var(--text-dim);margin-top:16px;max-width:700px;line-height:1.6}
+
+.project-content{max-width:1200px;margin:0 auto;padding:0 40px 80px}
+.project-content h3{font-weight:700;font-size:22px;letter-spacing:-0.5px;margin:56px 0 20px;padding-top:32px;border-top:1px solid rgba(255,255,255,.05)}
+.project-content h3:first-child{margin-top:0;border-top:none;padding-top:0}
+.project-content p{font-size:15px;color:var(--text-dim);line-height:1.8;margin-bottom:16px;max-width:800px}
+.img-full{margin:32px 0;border-radius:12px;overflow:hidden}
+.img-full img{width:100%;display:block;border-radius:12px}
+
+footer{padding:40px;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto}
+footer .copy{font-family:var(--font-mono);font-size:11px;color:var(--text-muted)}
+footer .links{display:flex;gap:24px}footer .links a{font-size:12px;color:var(--text-muted);transition:color .3s}footer .links a:hover{color:var(--accent)}
+
+.reveal{opacity:0;transform:translateY(30px);transition:all .7s cubic-bezier(.25,.46,.45,.94)}.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:768px){nav{padding:16px 20px}.page-header{padding:100px 20px 40px}.project-content{padding:0 20px 48px}footer{flex-direction:column;gap:12px;padding:24px 20px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../../index.html" class="logo">이주형<span>.</span></a>
+  <a href="../../index.html#playground" class="back">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    실험실
+  </a>
+</nav>
+
+<div class="page-header">
+  <p class="page-tag">UE5 Material — UI 모션</p>
+  <h1 class="page-title">Interaction Wave</h1>
+  <p class="page-subtitle">UE5 Material을 사용하여 텍스처 모양에 따라 인터렉션되는 파장을 생성하는 노드구현</p>
+</div>
+
+<div class="project-content">
+<div class="img-full reveal"><img src="images/01_hero.gif" alt="Interaction Wave" loading="lazy"></div>
+<h3 class="reveal">노드 구현 포인트</h3>
+<p class="reveal">텍스처의 모양이 특징이 되어 게임의 아이덴티티가 녹아들수 있게 만든다.</p>
+<p class="reveal">반복되며 속도 조절이 가능해야 한다.</p>
+<div class="img-full reveal"><img src="images/02_detail.png" alt="Interaction Wave" loading="lazy"></div>
+<h3 class="reveal">노드 풀이</h3>
+<p class="reveal">STEP 1</p>
+<p class="reveal">VetorToRadialValue 방사형으로 퍼지는 패턴을 만들기 위한 기본 값 제공</p>
+<p class="reveal">STEP2</p>
+<p class="reveal">Power 노드를 사용하여 중심 근처 값은 0에 가까워지고</p>
+<p class="reveal">외곽 값은 더 빠르게 증가중심을 더욱 선명하게 보이게 하며</p>
+<p class="reveal">마스크 효과를 강화</p>
+<p class="reveal">STEP3</p>
+<p class="reveal">Subtract 노드를 사용하여  웨이브가 나타나는 지점을 조정하는 역할</p>
+<p class="reveal">결과적으로 원형 마스크를 특정 위치에서 보이게 만들어줍니다.</p>
+<p class="reveal">STEP4</p>
+<p class="reveal">1-x를 통해 웨이브를 반전 시켜줍니다.</p>
+<p class="reveal">STEP5</p>
+<p class="reveal">Sine 노드를 일정한 주기로 반복되는 원형 패턴을 만들어 줍니다.</p>
+<div class="img-full reveal"><img src="images/03_node.png" alt="Interaction Wave" loading="lazy"></div>
+<p class="reveal">자주 사용하게 되는 노드 설명</p>
+<p class="reveal">VectorToRadialValue : 중심에서의 거리 값을 계산하는 노드로, 이를 이용해 방사형 UI 효과, 마스크, 애니메이션을 만들 때 사용</p>
+<p class="reveal">Mask : 특정 색상 채널(R, G, B, A)만 선택할 때 사용</p>
+<p class="reveal">Power : 0~1의 강도를 조절하여 이미지의 여백을 조절해줄수 있습니다.</p>
+<h3 class="reveal">텍스처 타일링</h3>
+<div class="img-full reveal"><img src="images/04_mask.png" alt="Interaction Wave" loading="lazy"></div>
+<p class="reveal">Append : 입력된 개별 스칼라 또는 벡터 값을 하나의 벡터로 결합</p>
+
+</div>
+
+<footer>
+  <span class="copy">&copy; 2026 이주형. All rights reserved.</span>
+  <div class="links">
+    <a href="../../index.html#playground">실험실</a>
+    <a href="../../index.html">홈</a>
+  </div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

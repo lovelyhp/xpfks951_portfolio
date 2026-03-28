@@ -19,14 +19,16 @@
 --font-mono:'Space Mono',monospace;
 }
 html{scroll-behavior:smooth;overflow-x:hidden}
-body{background:var(--bg);color:var(--text);font-family:var(--font-main);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--text);font-family:var(--font-main);overflow-x:hidden;-webkit-font-smoothing:antialiased;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-touch-callout:none}
 a{color:inherit;text-decoration:none}
-::selection{background:var(--accent);color:var(--bg)}
+::selection{background:transparent;color:inherit}
+img{-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-drag:none;user-drag:none}
+.work-card img,.playground-item img{pointer-events:none}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;mix-blend-mode:difference}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,12,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05);transition:background .3s}
 nav .logo{font-weight:800;font-size:20px;letter-spacing:-.5px;color:#fff}
-nav .logo span{color:var(--accent);mix-blend-mode:normal}
+nav .logo span{color:var(--accent)}
 nav ul{display:flex;gap:32px;list-style:none}
 nav ul li a{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:2px;color:#fff;transition:all .3s;position:relative}
 nav ul li a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--accent);transition:width .3s}
@@ -43,12 +45,13 @@ nav ul li a .num{color:var(--accent);margin-right:4px;font-size:10px}
 @keyframes gridMove{to{background-position:60px 60px}}
 
 .hero-label{font-family:var(--font-mono);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--text-dim);margin-bottom:24px;opacity:0;animation:fadeUp .8s .3s forwards}
-.hero-title{font-weight:900;font-size:clamp(48px,10vw,140px);line-height:.9;text-align:center;letter-spacing:-3px;position:relative;z-index:1}
+.hero-title{font-weight:900;font-size:clamp(48px,10vw,140px);line-height:calc(.9em + 10px);text-align:center;letter-spacing:-3px;position:relative;z-index:1}
 .hero-title .line{display:block;overflow:hidden}
 .hero-title .line span{display:inline-block;opacity:0;transform:translateY(100%);animation:slideUp .8s forwards}
-.hero-title .line:nth-child(1) span{animation-delay:.5s}
-.hero-title .line:nth-child(2) span{animation-delay:.7s}
-.hero-title .stroke-text{-webkit-text-stroke:1.5px var(--text);color:transparent}
+.hero-title .line:nth-child(1) .stroke-text{animation-delay:.5s}
+.hero-title .line:nth-child(1) .accent-text{animation-delay:.65s}
+.hero-title .line:nth-child(2) span{animation-delay:.8s}
+.hero-title .stroke-text{-webkit-text-stroke:2px var(--text);color:var(--bg);paint-order:stroke fill;letter-spacing:8px}
 .hero-title .accent-text{color:var(--accent)}
 @keyframes slideUp{to{opacity:1;transform:translateY(0)}}
 @keyframes fadeUp{to{opacity:1}}
@@ -71,8 +74,8 @@ section{padding:120px 40px}
 .section-title{font-weight:800;font-size:clamp(32px,5vw,56px);letter-spacing:-2px;line-height:1.1}
 
 /* WORK GRID */
-.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.work-card{position:relative;overflow:hidden;border-radius:12px;background:var(--bg2);border:1px solid rgba(255,255,255,.05);aspect-ratio:4/3;cursor:pointer;transition:all .4s cubic-bezier(.25,.46,.45,.94)}
+.work-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.work-card{position:relative;overflow:hidden;border-radius:12px;background:var(--bg2);border:1px solid rgba(255,255,255,.05);aspect-ratio:3/4;cursor:pointer;transition:all .4s cubic-bezier(.25,.46,.45,.94)}
 .work-card:hover{border-color:var(--accent);transform:translateY(-4px)}
 .work-card:hover .work-card-overlay{opacity:1}
 .work-card:hover .work-card-img{transform:scale(1.05)}
@@ -91,30 +94,30 @@ section{padding:120px 40px}
 .about-quote{margin-top:32px;padding-left:20px;border-left:2px solid var(--accent);font-style:normal;color:var(--text-dim);line-height:1.7;font-size:15px}
 
 .timeline{position:relative;padding-left:32px}
-.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--accent),var(--accent2),var(--accent3))}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:#fff}
 .timeline-item{position:relative;padding-bottom:40px}
-.timeline-item::before{content:'';position:absolute;left:-36px;top:6px;width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px rgba(200,255,0,.4)}
-.timeline-item:nth-child(2)::before{background:var(--accent2);box-shadow:0 0 12px rgba(0,229,255,.4)}
-.timeline-item:nth-child(3)::before{background:var(--accent2);box-shadow:0 0 12px rgba(0,229,255,.4)}
-.timeline-item:nth-child(4)::before{background:var(--accent3);box-shadow:0 0 12px rgba(255,61,90,.4)}
+.timeline-item::before{content:'';position:absolute;left:-36px;top:6px;width:9px;height:9px;border-radius:50%;background:#fff;box-shadow:none}
+.timeline-item:first-child::before{background:var(--accent);box-shadow:0 0 12px rgba(200,255,0,.5),0 0 24px rgba(200,255,0,.3)}
+.timeline-item:first-child::after{content:'';position:absolute;left:-32px;top:6px;bottom:0;width:1px;background:var(--accent);box-shadow:0 0 6px rgba(200,255,0,.4),0 0 12px rgba(200,255,0,.2)}
+.timeline-item:nth-child(2)::before{background:#fff;box-shadow:none}
 .timeline-date{font-family:var(--font-mono);font-size:11px;color:var(--text-muted);letter-spacing:2px;margin-bottom:4px}
 .timeline-company{font-weight:700;font-size:18px;margin-bottom:2px}
 .timeline-role{font-size:13px;color:var(--text-dim);line-height:1.6}
 .timeline-detail{color:var(--text-muted);font-size:12px;margin-top:2px;line-height:1.5}
 
-.skills-grid{margin-top:48px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.skill-tag{padding:10px 16px;border-radius:8px;background:var(--bg3);border:1px solid rgba(255,255,255,.05);font-size:13px;color:var(--text-dim);text-align:center;transition:all .3s}
-.skill-tag:hover{border-color:var(--accent);color:var(--accent)}
+.skills-grid{margin-top:40px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.skill-tag{padding:10px 16px;border-radius:8px;background:var(--bg3);border:1px solid rgba(255,255,255,.05);font-size:13px;color:var(--text-dim);text-align:center}
 
 /* PLAYGROUND */
 .playground-marquee{overflow:hidden;white-space:nowrap;margin-bottom:48px}
 .playground-marquee-inner{display:inline-flex;animation:marquee 30s linear infinite}
-.playground-marquee-item{font-weight:900;font-size:clamp(48px,8vw,96px);letter-spacing:-2px;padding:0 40px;color:transparent;-webkit-text-stroke:1px var(--text-muted)}
-.playground-marquee-item:nth-child(odd){-webkit-text-stroke-color:var(--accent)}
+.playground-marquee-item{font-weight:900;font-size:clamp(48px,8vw,96px);letter-spacing:4px;padding:0 40px;color:var(--bg);-webkit-text-stroke:1px var(--text-muted);paint-order:stroke fill}
+.playground-marquee-item:nth-child(odd){-webkit-text-stroke-color:var(--accent);color:var(--bg)}
+.playground-marquee-item:nth-child(even){-webkit-text-stroke-width:2px}
 @keyframes marquee{to{transform:translateX(-50%)}}
 
-.playground-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.playground-item{aspect-ratio:1;border-radius:12px;background:var(--bg2);border:1px solid rgba(255,255,255,.05);overflow:hidden;position:relative;cursor:pointer;transition:all .4s}
+.playground-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.playground-item{display:block;aspect-ratio:1;border-radius:12px;background:var(--bg2);border:1px solid rgba(255,255,255,.05);overflow:hidden;position:relative;cursor:pointer;transition:all .4s}
 .playground-item:hover{border-color:var(--accent2);transform:scale(1.02)}
 .playground-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
 .playground-item:hover img{transform:scale(1.08)}
@@ -138,6 +141,19 @@ footer .links{display:flex;gap:24px}
 footer .links a{font-size:12px;color:var(--text-muted);transition:color .3s}
 footer .links a:hover{color:var(--accent)}
 
+/* CAREER DETAIL */
+.career-detail{margin-top:80px}
+.career-detail-title{font-weight:700;font-family:var(--font-mono);font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:40px}
+.career-detail-grid{display:grid;gap:40px}
+.career-card{padding:28px;border-radius:12px;background:var(--bg2);border:1px solid rgba(255,255,255,.05)}
+.career-card-date{font-family:var(--font-mono);font-size:11px;color:var(--text-muted);letter-spacing:2px;margin-bottom:6px}
+.career-card-company{font-weight:700;font-size:18px;margin-bottom:4px}
+.career-card-meta{font-size:12px;color:var(--accent);margin-bottom:10px;font-family:var(--font-mono);letter-spacing:1px}
+.career-card-desc{font-size:14px;color:var(--text-dim);line-height:1.8}
+.design-philosophy{margin-top:64px;padding:32px;border-radius:12px;border:1px solid rgba(200,255,0,.15);background:rgba(200,255,0,.03)}
+.design-philosophy h4{font-weight:700;font-size:16px;margin-bottom:16px;color:var(--accent)}
+.design-philosophy p{font-size:14px;color:var(--text-dim);line-height:1.9}
+
 /* SCROLL ANIMATIONS */
 .reveal{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.25,.46,.45,.94)}
 .reveal.visible{opacity:1;transform:translateY(0)}
@@ -151,13 +167,19 @@ footer .links a:hover{color:var(--accent)}
 .cursor.hover{width:48px;height:48px}
 
 /* PAGE TRANSITION */
-.page-transition{position:fixed;inset:0;background:var(--accent);z-index:9999;transform:scaleY(0);transform-origin:bottom;pointer-events:none}
+.page-transition{position:fixed;inset:0;background:var(--bg);z-index:9999;opacity:0;pointer-events:none;transition:opacity .4s cubic-bezier(.4,0,.2,1)}
+.page-transition.active{opacity:1}
+.page-transition .pt-loader{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;gap:6px}
+.page-transition .pt-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);opacity:.3;animation:ptPulse .8s ease-in-out infinite}
+.page-transition .pt-dot:nth-child(2){animation-delay:.15s}
+.page-transition .pt-dot:nth-child(3){animation-delay:.3s}
+@keyframes ptPulse{0%,100%{opacity:.3;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
 
-/* RESPONSIVE */
+/* RESPONSIVE — 큰 값부터 작은 값 순서 */
 @media(max-width:1024px){
-  .work-grid{grid-template-columns:1fr}
+  .work-grid{grid-template-columns:repeat(2,1fr)}
   .about-layout{grid-template-columns:1fr;gap:48px}
-  .playground-grid{grid-template-columns:repeat(2,1fr)}
+  .playground-grid{grid-template-columns:repeat(3,1fr)}
   section{padding:80px 24px}
 }
 @media(max-width:768px){
@@ -167,11 +189,14 @@ footer .links a:hover{color:var(--accent)}
   .nav-toggle{display:flex}
   .hero-title{letter-spacing:-1px}
   .hero-tags{flex-wrap:wrap;justify-content:center}
-  .playground-grid{grid-template-columns:1fr 1fr}
+  .playground-grid{grid-template-columns:repeat(2,1fr)}
   .skills-grid{grid-template-columns:1fr}
   .contact-links{flex-direction:column;align-items:center}
   footer{flex-direction:column;gap:16px;text-align:center}
   .cursor{display:none}
+}
+@media(max-width:640px){
+  .work-grid{grid-template-columns:1fr}
 }
 @media(max-width:480px){
   .playground-grid{grid-template-columns:1fr}
@@ -181,15 +206,15 @@ footer .links a:hover{color:var(--accent)}
 <body>
 
 <div class="cursor" id="cursor"></div>
-<div class="page-transition" id="pageTransition"></div>
+<div class="page-transition" id="pageTransition"><div class="pt-loader"><span class="pt-dot"></span><span class="pt-dot"></span><span class="pt-dot"></span></div></div>
 
 <!-- 내비게이션 -->
-<nav>
+<nav role="navigation" aria-label="메인 내비게이션">
   <a href="#" class="logo">이주형<span>.</span></a>
-  <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
+  <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="navMenu">
     <span></span><span></span><span></span>
   </button>
-  <ul id="navMenu">
+  <ul id="navMenu" role="menubar">
     <li><a href="#work"><span class="num">01</span> 작업</a></li>
     <li><a href="#about"><span class="num">02</span> 소개</a></li>
     <li><a href="#playground"><span class="num">03</span> 실험실</a></li>
@@ -205,7 +230,7 @@ footer .links a:hover{color:var(--accent)}
     <span class="line"><span class="stroke-text">게임</span> <span class="accent-text">UI</span></span>
     <span class="line"><span>디자이너</span></span>
   </h1>
-  <p class="hero-sub"><span>직관적인</span> 인터페이스와 <span>Material</span> 기반 연출을 설계합니다</p>
+  <p class="hero-sub"><span>직관적인</span> 인터페이스 디자인과 <span>Material</span> 기반 연출을 설계합니다</p>
   <div class="hero-tags">
     <span class="tag">Unreal Engine</span>
     <span class="tag">UI/UX</span>
@@ -297,7 +322,7 @@ footer .links a:hover{color:var(--accent)}
         "디자인이 사용자들에게 시각적인 즐거움 뿐만 아니라 그 자체로 매뉴얼이자 지도가 되는
         직관적인 디자인을 하는 것이 저의 철학입니다."
       </blockquote>
-      <div class="skills-grid" style="margin-top:40px">
+      <div class="skills-grid">
         <div class="skill-tag">Unreal Engine 3/4/5</div>
         <div class="skill-tag">UMG / Material</div>
         <div class="skill-tag">Photoshop / Illustrator</div>
@@ -337,6 +362,45 @@ footer .links a:hover{color:var(--accent)}
       </div>
     </div>
   </div>
+
+<!-- 경력기술서 -->
+<div class="career-detail reveal">
+  <h3 class="career-detail-title">경력기술서</h3>
+  <div class="career-detail-grid">
+    <div class="career-card">
+      <p class="career-card-date">2018. 08 — 2020. 09</p>
+      <h4 class="career-card-company">팩토리얼게임즈 UI디자인팀</h4>
+      <p class="career-card-meta">UNREAL4 / TPS / MMORPG / 프로젝트 크레이지 / 사원</p>
+      <p class="career-card-desc">주로 로비 및 전투 버프/디버프 아이콘을 담당했으며, 인벤토리 및 무기 강화 쪽을 개발하고 강화에 필요한 이펙트를 머테리얼로 제작하여 적용하였습니다.</p>
+    </div>
+    <div class="career-card">
+      <p class="career-card-date">2021. 01 — 2021. 08</p>
+      <h4 class="career-card-company">라인게임즈 스페이스다이브 UI디자인팀</h4>
+      <p class="career-card-meta">UNREAL4 / MMORPG / 퀀텀나이츠 / 사원</p>
+      <p class="career-card-desc">인게임 HUD 및 스킬 아이콘과 강화를 담당했으며 인터랙션 및 강화에 필요한 곳에 이펙트 추가 및 가이드를 제작하여 팀원들에게 공유하여 서로가 서로에게 도움이 될 수 있는 환경을 만들었습니다.</p>
+    </div>
+    <div class="career-card">
+      <p class="career-card-date">2021. 08 — 2022. 07</p>
+      <h4 class="career-card-company">엔픽셀 크로노오디세이 UI팀</h4>
+      <p class="career-card-meta">UNREAL4-5 / MMORPG / 크로노오디세이 / 사원</p>
+      <p class="career-card-desc">주로 시스템 쪽을 담당했으며 스킬 아이콘 제작을 하였습니다. 인터랙션이 필요한 곳에 이펙트를 추가하였고 팀원들이 바로 쓸 수 있는 커스텀이 가능한 머테리얼을 만들어 모두가 사용할 수 있게 하였습니다.</p>
+    </div>
+    <div class="career-card">
+      <p class="career-card-date">2022. 07 — 현재</p>
+      <h4 class="career-card-company">스마일게이트엔터테인먼트 NCF UI1팀</h4>
+      <p class="career-card-meta">UNREAL3-4 / FPS / 크로스파이어HD·X / 선임</p>
+      <p class="career-card-desc">이펙트 및 배너 작업을 많이 진행하였고 크로스파이어 X의 경우 Unreal4 Material로 이펙트를 제작하여 로비 및 다양한 곳에 적용시켰습니다. 또한 크로스파이어 HD 신규 로비를 진행하면서 이에 필요한 전반적인 이펙트를 담당하여 적용하였으며, 기존 라이브 로비에서의 무기 숙련도 및 PVE 결과 창, PVE 프로필 페이지 및 신규복귀 팝업 페이지에 대한 개편을 진행하였습니다.</p>
+    </div>
+  </div>
+  <div class="design-philosophy reveal">
+    <h4>UI/UX 디자인의 생각</h4>
+    <p>
+      UI/UX 디자인은 시간이 지날수록 그 무게와 밀도가 플랫해져 가고, UI에 입혀진 2D Effect와 깔끔한 터치감이 사용자의 이목을 더 끌어당길 수 있다고 생각합니다.<br><br>
+      이러한 트렌드와 소신을 바탕으로 엔진에 디자인을 입힐 때는 그 퀄리티를 최대한 높이는 데 방점을 찍고, UMG에 구현할 Material을 적극 활용해 시각적인 피드백을 구현해 왔습니다.<br><br>
+      디자인이 사용자들에게 시각적인 즐거움 뿐만 아니라 그 자체로 매뉴얼이자 지도가 되는 직관적인 디자인을 하는 것이 지난 7년 정도의 경력을 밑거름 삼아 세워 본 나름의 철학입니다.
+    </p>
+  </div>
+</div>
 </section>
 
 <!-- 실험실 -->
@@ -358,42 +422,41 @@ footer .links a:hover{color:var(--accent)}
     </div>
   </div>
   <div class="playground-grid">
-    <div class="playground-item reveal reveal-delay-1">
-      <img src="images/crossfire/text-effect.gif" alt="텍스트 이펙트" loading="lazy">
+    <a href="playground/texteffect/" class="playground-item reveal reveal-delay-1">
+      <img src="playground/texteffect/images/01_hero.gif" alt="텍스트 이펙트" loading="lazy">
       <div class="playground-item-label">텍스트 이펙트</div>
-    </div>
-    <div class="playground-item reveal reveal-delay-2">
-      <img src="images/crossfire/boost-vfx.gif" alt="부스트 이펙트" loading="lazy">
+    </a>
+    <a href="playground/boostvfx/" class="playground-item reveal reveal-delay-2">
+      <img src="playground/boostvfx/images/01_hero.gif" alt="부스트 VFX" loading="lazy">
       <div class="playground-item-label">부스트 VFX</div>
-    </div>
-    <div class="playground-item reveal reveal-delay-3">
-      <img src="images/crossfire/loading-fx.gif" alt="로딩 이펙트" loading="lazy">
+    </a>
+    <a href="playground/loadingeffect/" class="playground-item reveal reveal-delay-3">
+      <img src="playground/loadingeffect/images/01_hero.gif" alt="로딩 이펙트" loading="lazy">
       <div class="playground-item-label">로딩 이펙트</div>
-    </div>
-    <div class="playground-item reveal reveal-delay-1">
-      <img src="images/crossfire/mission-clear.gif" alt="미션 완료" loading="lazy">
+    </a>
+    <a href="playground/mission/" class="playground-item reveal reveal-delay-4">
+      <img src="playground/mission/images/01_hero.gif" alt="미션 완료 연출" loading="lazy">
       <div class="playground-item-label">미션 완료 연출</div>
-    </div>
-    <div class="playground-item reveal reveal-delay-2">
-      <img src="images/quantum/level-up-motion.gif" alt="UI 모션" loading="lazy">
+    </a>
+    <a href="playground/uimotion/" class="playground-item reveal reveal-delay-1">
+      <img src="playground/uimotion/images/01_hero.gif" alt="UI 모션" loading="lazy">
       <div class="playground-item-label">UI 모션</div>
-    </div>
-    <div class="playground-item reveal reveal-delay-3">
-      <img src="images/crossfire/pve-weapon-blessing-detail.gif" alt="무기 축복" loading="lazy">
+    </a>
+    <a href="playground/mercy/" class="playground-item reveal reveal-delay-2">
+      <img src="playground/mercy/images/01_hero.gif" alt="무기 축복 연출" loading="lazy">
       <div class="playground-item-label">무기 축복 연출</div>
-    </div>
+    </a>
   </div>
 </section>
 
 <!-- 연락 -->
 <section id="contact" class="contact-section">
   <div class="reveal">
-    <p class="section-num" style="text-align:center">04 — 연락</p>
+    <p class="section-num">04 — 연락</p>
     <h2 class="contact-big">함께 <span class="accent">만들어</span><br>나가요</h2>
     <p class="contact-desc">새로운 프로젝트나 협업에 관심이 있으시다면 편하게 연락해 주세요.</p>
     <div class="contact-links">
       <a href="mailto:xpfks951@naver.com" class="contact-btn primary">이메일 보내기</a>
-      <a href="https://xpfks951.com" class="contact-btn" target="_blank">기존 사이트</a>
     </div>
   </div>
 </section>
@@ -424,28 +487,41 @@ document.querySelectorAll('a,button,.work-card,.playground-item,.skill-tag,.cont
 
 const navToggle=document.getElementById('navToggle');
 const navMenu=document.getElementById('navMenu');
-navToggle.addEventListener('click',()=>navMenu.classList.toggle('open'));
-navMenu.querySelectorAll('a').forEach(link=>{link.addEventListener('click',()=>navMenu.classList.remove('open'))});
+navToggle.addEventListener('click',()=>{
+  const isOpen=navMenu.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded',isOpen);
+  navToggle.setAttribute('aria-label',isOpen?'메뉴 닫기':'메뉴 열기');
+});
+navMenu.querySelectorAll('a').forEach(link=>{link.addEventListener('click',()=>{
+  navMenu.classList.remove('open');
+  navToggle.setAttribute('aria-expanded','false');
+  navToggle.setAttribute('aria-label','메뉴 열기');
+})});
 
 document.querySelectorAll('[data-project]').forEach(link=>{
   link.addEventListener('click',e=>{
     e.preventDefault();
     const href=link.getAttribute('href');
     const pt=document.getElementById('pageTransition');
-    pt.style.transformOrigin='bottom';
-    pt.style.animation='ptIn .5s forwards';
+    pt.style.pointerEvents='all';
+    pt.classList.add('active');
     setTimeout(()=>{window.location.href=href},500);
   });
 });
-
-const style=document.createElement('style');
-style.textContent='@keyframes ptIn{to{transform:scaleY(1)}}@keyframes ptOut{from{transform:scaleY(1)}to{transform:scaleY(0)}}';
-document.head.appendChild(style);
 window.addEventListener('load',()=>{
   const pt=document.getElementById('pageTransition');
-  pt.style.transformOrigin='top';pt.style.transform='scaleY(1)';
-  pt.style.animation='ptOut .5s .1s forwards';
+  pt.classList.remove('active');
+  pt.style.pointerEvents='none';
 });
+
+/* 콘텐츠 보호 — 소스보기/개발자도구만 차단, 일반 사용(복사/인쇄 등)은 허용 */
+document.addEventListener('contextmenu',e=>e.preventDefault());
+document.addEventListener('keydown',e=>{
+  if(e.key==='F12') e.preventDefault();
+  if(e.ctrlKey&&(e.key==='u'||e.key==='U'||e.key==='s'||e.key==='S')) e.preventDefault();
+  if(e.ctrlKey&&e.shiftKey&&(e.key==='I'||e.key==='i'||e.key==='J'||e.key==='j')) e.preventDefault();
+});
+document.addEventListener('dragstart',e=>{if(e.target.tagName==='IMG')e.preventDefault()});
 </script>
 </body>
 </html>
