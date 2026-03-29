@@ -14,6 +14,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:fl
 .project-hero{height:70vh;min-height:480px;position:relative;overflow:hidden;display:flex;align-items:flex-end}.project-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}.project-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,var(--bg) 0%,rgba(0,0,0,.3) 50%,rgba(0,0,0,.6) 100%)}.project-hero-content{position:relative;z-index:1;padding:60px 40px;width:100%}.project-tag{font-family:var(--font-mono);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}.project-title{font-weight:900;font-size:clamp(36px,6vw,72px);letter-spacing:-2px;line-height:1}.project-subtitle{font-size:16px;color:var(--text-dim);margin-top:12px;max-width:600px;line-height:1.6}
 .project-meta{display:flex;gap:48px;padding:48px 40px;border-bottom:1px solid rgba(255,255,255,.05)}.meta-item{display:flex;flex-direction:column;gap:4px}.meta-label{font-family:var(--font-mono);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted)}.meta-value{font-size:14px;color:var(--text-dim)}
 .project-content{max-width:1200px;margin:0 auto;padding:80px 40px}.project-content h3{font-weight:700;font-size:24px;letter-spacing:-1px;margin:64px 0 24px;padding-top:32px;border-top:1px solid rgba(255,255,255,.05)}.project-content h3:first-child{margin-top:0;border-top:none;padding-top:0}.project-content p{font-size:15px;color:var(--text-dim);line-height:1.8;margin-bottom:24px;max-width:720px}.img-full{margin:40px 0;border-radius:12px;overflow:hidden}.img-full img{width:100%}.img-grid{display:grid;grid-template-columns:1fr;gap:16px;margin:40px 0}.img-grid img{border-radius:12px}.img-caption{font-size:12px;color:var(--text-muted);margin-top:8px;text-align:center}
+.video-full{margin:40px 0;border-radius:12px;overflow:hidden;position:relative;padding-bottom:56.25%;height:0}.video-full iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;border-radius:12px}
 .project-nav{display:flex;justify-content:space-between;align-items:center;padding:60px 40px;border-top:1px solid rgba(255,255,255,.05)}.project-nav a{font-size:13px;color:var(--text-dim);transition:color .3s;display:flex;align-items:center;gap:8px}.project-nav a:hover{color:var(--accent)}
 footer{padding:40px;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;align-items:center}footer .copy{font-family:var(--font-mono);font-size:11px;color:var(--text-muted)}footer .links{display:flex;gap:24px}footer .links a{font-size:12px;color:var(--text-muted);transition:color .3s}footer .links a:hover{color:var(--accent)}
 .reveal{opacity:0;transform:translateY(30px);transition:all .7s cubic-bezier(.25,.46,.45,.94)}.reveal.visible{opacity:1;transform:translateY(0)}
@@ -58,6 +59,11 @@ footer{padding:40px;border-top:1px solid rgba(255,255,255,.05);display:flex;just
   </div>
 
   <div class="img-full reveal"><img src="../images/chrono/direction-concept.png" alt="연출 컨셉"></div>
+
+  <div class="video-full reveal">
+    <iframe src="https://www.youtube.com/embed/MkA4-jn8mA4" title="크로노 오디세이 영상" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
   <div class="img-full reveal"><img src="../images/chrono/skill-icons.png" alt="스킬 아이콘"></div>
 </div>
 
