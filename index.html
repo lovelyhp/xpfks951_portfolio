@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ì´ì£¼í â ê²ì UI ëìì´ë í¬í¸í´ë¦¬ì¤</title>
-<meta name="description" content="ì´ì£¼í â 7ëì°¨ ê²ì UI ëìì´ë í¬í¸í´ë¦¬ì¤. Unreal Engine Material ê¸°ë° UI ì´íí¸ ì ë¬¸.">
+<title>이주형 — 게임 UI 디자이너 포트폴리오</title>
+<meta name="description" content="이주형 — 7년차 게임 UI 디자이너 포트폴리오. Unreal Engine Material 기반 UI 이펙트 전문.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -175,7 +175,7 @@ footer .links a:hover{color:var(--accent)}
 .page-transition .pt-dot:nth-child(3){animation-delay:.3s}
 @keyframes ptPulse{0%,100%{opacity:.3;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
 
-/* RESPONSIVE â í° ê°ë¶í° ìì ê° ìì */
+/* RESPONSIVE — 큰 값부터 작은 값 순서 */
 @media(max-width:1024px){
   .work-grid{grid-template-columns:repeat(2,1fr)}
   .about-layout{grid-template-columns:1fr;gap:48px}
@@ -208,29 +208,29 @@ footer .links a:hover{color:var(--accent)}
 <div class="cursor" id="cursor"></div>
 <div class="page-transition" id="pageTransition"><div class="pt-loader"><span class="pt-dot"></span><span class="pt-dot"></span><span class="pt-dot"></span></div></div>
 
-<!-- ë´ë¹ê²ì´ì -->
-<nav role="navigation" aria-label="ë©ì¸ ë´ë¹ê²ì´ì">
-  <a href="#" class="logo">ì´ì£¼í<span>.</span></a>
-  <button class="nav-toggle" id="navToggle" aria-label="ë©ë´ ì´ê¸°" aria-expanded="false" aria-controls="navMenu">
+<!-- 내비게이션 -->
+<nav role="navigation" aria-label="메인 내비게이션">
+  <a href="#" class="logo">이주형<span>.</span></a>
+  <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="navMenu">
     <span></span><span></span><span></span>
   </button>
   <ul id="navMenu" role="menubar">
-    <li><a href="#work"><span class="num">01</span> ìì</a></li>
-    <li><a href="#about"><span class="num">02</span> ìê°</a></li>
-    <li><a href="#playground"><span class="num">03</span> ì¤íì¤</a></li>
-    <li><a href="#contact"><span class="num">04</span> ì°ë½</a></li>
+    <li><a href="#work"><span class="num">01</span> 작업</a></li>
+    <li><a href="#about"><span class="num">02</span> 소개</a></li>
+    <li><a href="#playground"><span class="num">03</span> 실험실</a></li>
+    <li><a href="#contact"><span class="num">04</span> 연락</a></li>
   </ul>
 </nav>
 
-<!-- íì´ë¡ -->
+<!-- 히어로 -->
 <section class="hero" id="hero">
   <div class="hero-grid"></div>
-  <p class="hero-label">Game UI Designer â 7+ Years</p>
+  <p class="hero-label">Game UI Designer — 7+ Years</p>
   <h1 class="hero-title">
-    <span class="line"><span class="stroke-text">ê²ì</span> <span class="accent-text">UI</span></span>
-    <span class="line"><span>ëìì´ë</span></span>
+    <span class="line"><span class="stroke-text">게임</span> <span class="accent-text">UI</span></span>
+    <span class="line"><span>디자이너</span></span>
   </h1>
-  <p class="hero-sub"><span>ì§ê´ì ì¸</span> ì¸í°íì´ì¤ ëìì¸ê³¼ <span>Material</span> ê¸°ë° ì°ì¶ì ì¤ê³í©ëë¤</p>
+  <p class="hero-sub"><span>직관적인</span> 인터페이스 디자인과 <span>Material</span> 기반 연출을 설계합니다</p>
   <div class="hero-tags">
     <span class="tag">Unreal Engine</span>
     <span class="tag">UI/UX</span>
@@ -243,20 +243,20 @@ footer .links a:hover{color:var(--accent)}
   </div>
 </section>
 
-<!-- ìì -->
+<!-- 작업 -->
 <section id="work">
   <div class="section-header reveal">
-    <p class="section-num">01 â ì£¼ì ìì</p>
-    <h2 class="section-title">íë¡ì í¸</h2>
+    <p class="section-num">01 — 주요 작업</p>
+    <h2 class="section-title">프로젝트</h2>
   </div>
   <div class="work-grid">
 
     <a href="projects/crossfire.html" class="work-card reveal reveal-delay-1" data-project>
-      <img src="images/crossfire/main.png" class="work-card-img" alt="í¬ë¡ì¤íì´ì´" loading="lazy">
+      <img src="images/crossfire/main.png" class="work-card-img" alt="크로스파이어" loading="lazy">
       <div class="work-card-overlay">
-        <span class="work-card-tag">PC / ì½ì â FPS</span>
-        <h3 class="work-card-title">í¬ë¡ì¤íì´ì´ X / HD</h3>
-        <p class="work-card-desc">ì´íí¸ ë° ë¡ë¹ ê°í¸, Material ê¸°ë° UI ì°ì¶</p>
+        <span class="work-card-tag">PC / 콘솔 — FPS</span>
+        <h3 class="work-card-title">크로스파이어 X / HD</h3>
+        <p class="work-card-desc">이펙트 및 로비 개편, Material 기반 UI 연출</p>
       </div>
       <div class="work-card-arrow">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -264,11 +264,11 @@ footer .links a:hover{color:var(--accent)}
     </a>
 
     <a href="projects/chrono.html" class="work-card reveal reveal-delay-2" data-project>
-      <img src="images/chrono/main.png" class="work-card-img" alt="í¬ë¡ë¸ ì¤ëì¸ì´" loading="lazy">
+      <img src="images/chrono/main.png" class="work-card-img" alt="크로노 오디세이" loading="lazy">
       <div class="work-card-overlay">
-        <span class="work-card-tag">PC / ì½ì â MMORPG</span>
-        <h3 class="work-card-title">í¬ë¡ë¸ ì¤ëì¸ì´</h3>
-        <p class="work-card-desc">ìì¤í UI, ì¤í¬ ìì´ì½, ì¸í°ëì ì´íí¸</p>
+        <span class="work-card-tag">PC / 콘솔 — MMORPG</span>
+        <h3 class="work-card-title">크로노 오디세이</h3>
+        <p class="work-card-desc">시스템 UI, 스킬 아이콘, 인터랙션 이펙트</p>
       </div>
       <div class="work-card-arrow">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -276,11 +276,11 @@ footer .links a:hover{color:var(--accent)}
     </a>
 
     <a href="projects/quantum.html" class="work-card reveal reveal-delay-3" data-project>
-      <img src="images/quantum/main.png" class="work-card-img" alt="íí ëì´ì¸ " loading="lazy">
+      <img src="images/quantum/main.png" class="work-card-img" alt="퀀텀 나이츠" loading="lazy">
       <div class="work-card-overlay">
-        <span class="work-card-tag">PC â RPG</span>
-        <h3 class="work-card-title">íí ëì´ì¸ </h3>
-        <p class="work-card-desc">HUD ëìì¸, ì¤í¬ ìì´ì½, Material ì´íí¸</p>
+        <span class="work-card-tag">PC — RPG</span>
+        <h3 class="work-card-title">퀀텀 나이츠</h3>
+        <p class="work-card-desc">HUD 디자인, 스킬 아이콘, Material 이펙트</p>
       </div>
       <div class="work-card-arrow">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -288,11 +288,11 @@ footer .links a:hover{color:var(--accent)}
     </a>
 
     <a href="projects/justcause.html" class="work-card reveal reveal-delay-4" data-project>
-      <img src="images/justcause/main.png" class="work-card-img" alt="ì ì¤í¸ ì½ì¦ ëª¨ë°ì¼" loading="lazy">
+      <img src="images/justcause/main.png" class="work-card-img" alt="저스트 코즈 모바일" loading="lazy">
       <div class="work-card-overlay">
-        <span class="work-card-tag">ëª¨ë°ì¼ â TPS / RPG</span>
-        <h3 class="work-card-title">ì ì¤í¸ ì½ì¦ ëª¨ë°ì¼</h3>
-        <p class="work-card-desc">HUD, ì¸ë²¤í ë¦¬, ìëë§µ, ëì  UI</p>
+        <span class="work-card-tag">모바일 — TPS / RPG</span>
+        <h3 class="work-card-title">저스트 코즈 모바일</h3>
+        <p class="work-card-desc">HUD, 인벤토리, 월드맵, 던전 UI</p>
       </div>
       <div class="work-card-arrow">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -302,25 +302,25 @@ footer .links a:hover{color:var(--accent)}
   </div>
 </section>
 
-<!-- ìê° -->
+<!-- 소개 -->
 <section id="about">
   <div class="section-header reveal">
-    <p class="section-num">02 â ìê°</p>
-    <h2 class="section-title">ì´ì£¼í</h2>
+    <p class="section-num">02 — 소개</p>
+    <h2 class="section-title">이주형</h2>
   </div>
   <div class="about-layout">
     <div class="reveal">
       <p class="about-intro">
-        <strong>UI ëìì´ëë¡ 7ëì´ë¼ë ìê°ì ë³´ë´ê³  ììµëë¤.</strong><br><br>
-        UI ëìì¸ ë¿ë§ ìëë¼ ì°ì¶ìë ë§ì ì¤ìí¨ì ìê³  ìê¸°ì ëìì¸ìë§ ì¹ì¤íì§ ìê³ ,
-        í­ì ëìì¸ê³¼ ì°ì¶ì íê³ë¥¼ ë°ì´ëê¸° ìí´ ë¸ë ¥íê³  ììµëë¤.<br><br>
-        ì§ê´ì ì´ê³  ì¹ì í UI/UXì êµ¬íì´ì¼ë§ë¡ ëìì´ëì ì­í ìì ê¹¨ë¬ììµëë¤.
-        ìì§ì ëìì¸ì ìí ëë ê·¸ íë¦¬í°ë¥¼ ìµëí ëì´ë ë° ë°©ì ì ì°ê³ ,
-        UMGì êµ¬íí  Materialì ì ê·¹ íì©í´ ìê°ì  í¼ëë°±ì êµ¬íí©ëë¤.
+        <strong>UI 디자이너로 7년이라는 시간을 보내고 있습니다.</strong><br><br>
+        UI 디자인 뿐만 아니라 연출에도 많은 중요함을 알고 있기에 디자인에만 치중하지 않고,
+        항상 디자인과 연출의 한계를 뛰어넘기 위해 노력하고 있습니다.<br><br>
+        직관적이고 친절한 UI/UX의 구현이야말로 디자이너의 역할임을 깨달았습니다.
+        엔진에 디자인을 입힐 때는 그 퀄리티를 최대한 높이는 데 방점을 찍고,
+        UMG에 구현할 Material을 적극 활용해 시각적 피드백을 구현합니다.
       </p>
       <blockquote class="about-quote">
-        "ëìì¸ì´ ì¬ì©ìë¤ìê² ìê°ì ì¸ ì¦ê±°ì ë¿ë§ ìëë¼ ê·¸ ìì²´ë¡ ë§¤ë´ì¼ì´ì ì§ëê° ëë
-        ì§ê´ì ì¸ ëìì¸ì íë ê²ì´ ì ì ì² íìëë¤."
+        "디자인이 사용자들에게 시각적인 즐거움 뿐만 아니라 그 자체로 매뉴얼이자 지도가 되는
+        직관적인 디자인을 하는 것이 저의 철학입니다."
       </blockquote>
       <div class="skills-grid">
         <div class="skill-tag">Unreal Engine 3/4/5</div>
@@ -328,95 +328,95 @@ footer .links a:hover{color:var(--accent)}
         <div class="skill-tag">Photoshop / Illustrator</div>
         <div class="skill-tag">Figma</div>
         <div class="skill-tag">After Effects</div>
-        <div class="skill-tag">UI/UX ëìì¸</div>
-        <div class="skill-tag">ëª¨ì / VFX</div>
-        <div class="skill-tag">ìì´ì½ ëìì¸</div>
+        <div class="skill-tag">UI/UX 디자인</div>
+        <div class="skill-tag">모션 / VFX</div>
+        <div class="skill-tag">아이콘 디자인</div>
       </div>
     </div>
     <div class="reveal reveal-delay-2">
       <div class="timeline">
         <div class="timeline-item">
-          <p class="timeline-date">2022. 07 â íì¬</p>
-          <h4 class="timeline-company">ì¤ë§ì¼ê²ì´í¸ìí°íì¸ë¨¼í¸</h4>
-          <p class="timeline-role">NCF UI1í Â· ì ì</p>
-          <p class="timeline-detail">í¬ë¡ì¤íì´ì´ HD / í¬ë¡ì¤íì´ì´ X â FPS<br>ì´íí¸, ë°°ë, ë¡ë¹ ê°í¸, Material ì´íí¸ ì ì</p>
+          <p class="timeline-date">2022. 07 — 현재</p>
+          <h4 class="timeline-company">스마일게이트엔터테인먼트</h4>
+          <p class="timeline-role">NCF UI1팀 · 선임</p>
+          <p class="timeline-detail">크로스파이어 HD / 크로스파이어 X — FPS<br>이펙트, 배너, 로비 개편, Material 이펙트 제작</p>
         </div>
         <div class="timeline-item">
-          <p class="timeline-date">2021. 08 â 2022. 07</p>
-          <h4 class="timeline-company">ìí½ì</h4>
-          <p class="timeline-role">í¬ë¡ë¸ì¤ëì¸ì´ UIí Â· ì¬ì</p>
-          <p class="timeline-detail">MMORPG â ìì¤í UI, ì¤í¬ ìì´ì½, ì»¤ì¤í Material</p>
+          <p class="timeline-date">2021. 08 — 2022. 07</p>
+          <h4 class="timeline-company">엔픽셀</h4>
+          <p class="timeline-role">크로노오디세이 UI팀 · 사원</p>
+          <p class="timeline-detail">MMORPG — 시스템 UI, 스킬 아이콘, 커스텀 Material</p>
         </div>
         <div class="timeline-item">
-          <p class="timeline-date">2021. 01 â 2021. 08</p>
-          <h4 class="timeline-company">ë¼ì¸ê²ìì¦ ì¤íì´ì¤ë¤ì´ë¸</h4>
-          <p class="timeline-role">UIëìì¸í Â· ì¬ì</p>
-          <p class="timeline-detail">ííëì´ì¸  â HUD, ì¤í¬ ìì´ì½, ì´íí¸ ê°ì´ë</p>
+          <p class="timeline-date">2021. 01 — 2021. 08</p>
+          <h4 class="timeline-company">라인게임즈 스페이스다이브</h4>
+          <p class="timeline-role">UI디자인팀 · 사원</p>
+          <p class="timeline-detail">퀀텀나이츠 — HUD, 스킬 아이콘, 이펙트 가이드</p>
         </div>
         <div class="timeline-item">
-          <p class="timeline-date">2018. 08 â 2020. 09</p>
-          <h4 class="timeline-company">í©í ë¦¬ì¼ê²ìì¦</h4>
-          <p class="timeline-role">UIëìì¸í Â· ì¬ì</p>
-          <p class="timeline-detail">íë¡ì í¸ í¬ë ì´ì§ â ì¸ë²¤í ë¦¬, ê°í ìì¤í, ì´íí¸</p>
+          <p class="timeline-date">2018. 08 — 2020. 09</p>
+          <h4 class="timeline-company">팩토리얼게임즈</h4>
+          <p class="timeline-role">UI디자인팀 · 사원</p>
+          <p class="timeline-detail">프로젝트 크레이지 — 인벤토리, 강화 시스템, 이펙트</p>
         </div>
       </div>
     </div>
   </div>
 
-<!-- ê²½ë ¥ê¸°ì ì -->
+<!-- 경력기술서 -->
 <div class="career-detail reveal">
-  <h3 class="career-detail-title">ê²½ë ¥ê¸°ì ì</h3>
+  <h3 class="career-detail-title">경력기술서</h3>
   <div class="career-detail-grid">
     <div class="career-card">
-      <p class="career-card-date">2018. 08 â 2020. 09</p>
-      <h4 class="career-card-company">í©í ë¦¬ì¼ê²ìì¦ UIëìì¸í</h4>
-      <p class="career-card-meta">UNREAL4 / TPS / MMORPG / íë¡ì í¸ í¬ë ì´ì§ / ì¬ì</p>
-      <p class="career-card-desc">ì£¼ë¡ ë¡ë¹ ë° ì í¬ ë²í/ëë²í ìì´ì½ì ë´ë¹íì¼ë©°, ì¸ë²¤í ë¦¬ ë° ë¬´ê¸° ê°í ìª½ì ê°ë°íê³  ê°íì íìí ì´íí¸ë¥¼ ë¨¸íë¦¬ì¼ë¡ ì ìíì¬ ì ì©íììµëë¤.</p>
+      <p class="career-card-date">2018. 08 — 2020. 09</p>
+      <h4 class="career-card-company">팩토리얼게임즈 UI디자인팀</h4>
+      <p class="career-card-meta">UNREAL4 / TPS / MMORPG / 프로젝트 크레이지 / 사원</p>
+      <p class="career-card-desc">주로 로비 및 전투 버프/디버프 아이콘을 담당했으며, 인벤토리 및 무기 강화 쪽을 개발하고 강화에 필요한 이펙트를 머테리얼로 제작하여 적용하였습니다.</p>
     </div>
     <div class="career-card">
-      <p class="career-card-date">2021. 01 â 2021. 08</p>
-      <h4 class="career-card-company">ë¼ì¸ê²ìì¦ ì¤íì´ì¤ë¤ì´ë¸ UIëìì¸í</h4>
-      <p class="career-card-meta">UNREAL4 / MMORPG / ííëì´ì¸  / ì¬ì</p>
-      <p class="career-card-desc">ì¸ê²ì HUD ë° ì¤í¬ ìì´ì½ê³¼ ê°íë¥¼ ë´ë¹íì¼ë©° ì¸í°ëì ë° ê°íì íìí ê³³ì ì´íí¸ ì¶ê° ë° ê°ì´ëë¥¼ ì ìíì¬ íìë¤ìê² ê³µì íì¬ ìë¡ê° ìë¡ìê² ëìì´ ë  ì ìë íê²½ì ë§ë¤ììµëë¤.</p>
+      <p class="career-card-date">2021. 01 — 2021. 08</p>
+      <h4 class="career-card-company">라인게임즈 스페이스다이브 UI디자인팀</h4>
+      <p class="career-card-meta">UNREAL4 / MMORPG / 퀀텀나이츠 / 사원</p>
+      <p class="career-card-desc">인게임 HUD 및 스킬 아이콘과 강화를 담당했으며 인터랙션 및 강화에 필요한 곳에 이펙트 추가 및 가이드를 제작하여 팀원들에게 공유하여 서로가 서로에게 도움이 될 수 있는 환경을 만들었습니다.</p>
     </div>
     <div class="career-card">
-      <p class="career-card-date">2021. 08 â 2022. 07</p>
-      <h4 class="career-card-company">ìí½ì í¬ë¡ë¸ì¤ëì¸ì´ UIí</h4>
-      <p class="career-card-meta">UNREAL4-5 / MMORPG / í¬ë¡ë¸ì¤ëì¸ì´ / ì¬ì</p>
-      <p class="career-card-desc">ì£¼ë¡ ìì¤í ìª½ì ë´ë¹íì¼ë©° ì¤í¬ ìì´ì½ ì ìì íììµëë¤. ì¸í°ëìì´ íìí ê³³ì ì´íí¸ë¥¼ ì¶ê°íìê³  íìë¤ì´ ë°ë¡ ì¸ ì ìë ì»¤ì¤íì´ ê°ë¥í ë¨¸íë¦¬ì¼ì ë§ë¤ì´ ëª¨ëê° ì¬ì©í  ì ìê² íììµëë¤.</p>
+      <p class="career-card-date">2021. 08 — 2022. 07</p>
+      <h4 class="career-card-company">엔픽셀 크로노오디세이 UI팀</h4>
+      <p class="career-card-meta">UNREAL4-5 / MMORPG / 크로노오디세이 / 사원</p>
+      <p class="career-card-desc">주로 시스템 쪽을 담당했으며 스킬 아이콘 제작을 하였습니다. 인터랙션이 필요한 곳에 이펙트를 추가하였고 팀원들이 바로 쓸 수 있는 커스텀이 가능한 머테리얼을 만들어 모두가 사용할 수 있게 하였습니다.</p>
     </div>
     <div class="career-card">
-      <p class="career-card-date">2022. 07 â íì¬</p>
-      <h4 class="career-card-company">ì¤ë§ì¼ê²ì´í¸ìí°íì¸ë¨¼í¸ NCF UI1í</h4>
-      <p class="career-card-meta">UNREAL3-4 / FPS / í¬ë¡ì¤íì´ì´HDÂ·X / ì ì</p>
-      <p class="career-card-desc">ì´íí¸ ë° ë°°ë ììì ë§ì´ ì§ííìê³  í¬ë¡ì¤íì´ì´ Xì ê²½ì° Unreal4 Materialë¡ ì´íí¸ë¥¼ ì ìíì¬ ë¡ë¹ ë° ë¤ìí ê³³ì ì ì©ìì¼°ìµëë¤. ëí í¬ë¡ì¤íì´ì´ HD ì ê· ë¡ë¹ë¥¼ ì§ííë©´ì ì´ì íìí ì ë°ì ì¸ ì´íí¸ë¥¼ ë´ë¹íì¬ ì ì©íìì¼ë©°, ê¸°ì¡´ ë¼ì´ë¸ ë¡ë¹ììì ë¬´ê¸° ìë ¨ë ë° PVE ê²°ê³¼ ì°½, PVE íë¡í íì´ì§ ë° ì ê·ë³µê· íì íì´ì§ì ëí ê°í¸ì ì§ííììµëë¤.</p>
+      <p class="career-card-date">2022. 07 — 현재</p>
+      <h4 class="career-card-company">스마일게이트엔터테인먼트 NCF UI1팀</h4>
+      <p class="career-card-meta">UNREAL3-4 / FPS / 크로스파이어HD·X / 선임</p>
+      <p class="career-card-desc">이펙트 및 배너 작업을 많이 진행하였고 크로스파이어 X의 경우 Unreal4 Material로 이펙트를 제작하여 로비 및 다양한 곳에 적용시켰습니다. 또한 크로스파이어 HD 신규 로비를 진행하면서 이에 필요한 전반적인 이펙트를 담당하여 적용하였으며, 기존 라이브 로비에서의 무기 숙련도 및 PVE 결과 창, PVE 프로필 페이지 및 신규복귀 팝업 페이지에 대한 개편을 진행하였습니다.</p>
     </div>
   </div>
   <div class="design-philosophy reveal">
-    <h4>UI/UX ëìì¸ì ìê°</h4>
+    <h4>UI/UX 디자인의 생각</h4>
     <p>
-      UI/UX ëìì¸ì ìê°ì´ ì§ë ìë¡ ê·¸ ë¬´ê²ì ë°ëê° íë«í´ì ¸ ê°ê³ , UIì ìíì§ 2D Effectì ê¹ëí í°ì¹ê°ì´ ì¬ì©ìì ì´ëª©ì ë ëì´ë¹ê¸¸ ì ìë¤ê³  ìê°í©ëë¤.<br><br>
-      ì´ë¬í í¸ë ëì ìì ì ë°íì¼ë¡ ìì§ì ëìì¸ì ìí ëë ê·¸ íë¦¬í°ë¥¼ ìµëí ëì´ë ë° ë°©ì ì ì°ê³ , UMGì êµ¬íí  Materialì ì ê·¹ íì©í´ ìê°ì ì¸ í¼ëë°±ì êµ¬íí´ ììµëë¤.<br><br>
-      ëìì¸ì´ ì¬ì©ìë¤ìê² ìê°ì ì¸ ì¦ê±°ì ë¿ë§ ìëë¼ ê·¸ ìì²´ë¡ ë§¤ë´ì¼ì´ì ì§ëê° ëë ì§ê´ì ì¸ ëìì¸ì íë ê²ì´ ì§ë 7ë ì ëì ê²½ë ¥ì ë°ê±°ë¦ ì¼ì ì¸ì ë³¸ ëë¦ì ì² íìëë¤.
+      UI/UX 디자인은 시간이 지날수록 그 무게와 밀도가 플랫해져 가고, UI에 입혀진 2D Effect와 깔끔한 터치감이 사용자의 이목을 더 끌어당길 수 있다고 생각합니다.<br><br>
+      이러한 트렌드와 소신을 바탕으로 엔진에 디자인을 입힐 때는 그 퀄리티를 최대한 높이는 데 방점을 찍고, UMG에 구현할 Material을 적극 활용해 시각적인 피드백을 구현해 왔습니다.<br><br>
+      디자인이 사용자들에게 시각적인 즐거움 뿐만 아니라 그 자체로 매뉴얼이자 지도가 되는 직관적인 디자인을 하는 것이 지난 7년 정도의 경력을 밑거름 삼아 세워 본 나름의 철학입니다.
     </p>
   </div>
 </div>
 </section>
 
-<!-- ì¤íì¤ -->
+<!-- 실험실 -->
 <section id="playground">
   <div class="section-header reveal">
-    <p class="section-num">03 â ì¤íì¤</p>
-    <h2 class="section-title">Material & ëª¨ì</h2>
+    <p class="section-num">03 — 실험실</p>
+    <h2 class="section-title">Material & 모션</h2>
   </div>
   <div class="playground-marquee">
     <div class="playground-marquee-inner">
       <span class="playground-marquee-item">MATERIAL</span>
-      <span class="playground-marquee-item">ì´íí¸</span>
+      <span class="playground-marquee-item">이펙트</span>
       <span class="playground-marquee-item">MOTION</span>
       <span class="playground-marquee-item">UNREAL</span>
       <span class="playground-marquee-item">MATERIAL</span>
-      <span class="playground-marquee-item">ì´íí¸</span>
+      <span class="playground-marquee-item">이펙트</span>
       <span class="playground-marquee-item">MOTION</span>
       <span class="playground-marquee-item">UNREAL</span>
     </div>
@@ -449,24 +449,24 @@ footer .links a:hover{color:var(--accent)}
   </div>
 </section>
 
-<!-- ì°ë½ -->
+<!-- 연락 -->
 <section id="contact" class="contact-section">
   <div class="reveal">
-    <p class="section-num">04 â ì°ë½</p>
-    <h2 class="contact-big">í¨ê» <span class="accent">ë§ë¤ì´</span><br>ëê°ì</h2>
-    <p class="contact-desc">ìë¡ì´ íë¡ì í¸ë íìì ê´ì¬ì´ ìì¼ìë¤ë©´ í¸íê² ì°ë½í´ ì£¼ì¸ì.</p>
+    <p class="section-num">04 — 연락</p>
+    <h2 class="contact-big">함께 <span class="accent">만들어</span><br>나가요</h2>
+    <p class="contact-desc">새로운 프로젝트나 협업에 관심이 있으시다면 편하게 연락해 주세요.</p>
     <div class="contact-links">
-      <a href="mailto:xpfks951@naver.com" class="contact-btn primary">ì´ë©ì¼ ë³´ë´ê¸°</a>
+      <a href="mailto:xpfks951@naver.com" class="contact-btn primary">이메일 보내기</a>
     </div>
   </div>
 </section>
 
-<!-- í¸í° -->
+<!-- 푸터 -->
 <footer>
-  <p class="copy">&copy; 2026 ì´ì£¼í. All rights reserved.</p>
+  <p class="copy">&copy; 2026 이주형. All rights reserved.</p>
   <div class="links">
-    <a href="#hero">ë§¨ ìë¡</a>
-    <a href="mailto:xpfks951@naver.com">ì´ë©ì¼</a>
+    <a href="#hero">맨 위로</a>
+    <a href="mailto:xpfks951@naver.com">이메일</a>
   </div>
 </footer>
 
@@ -490,12 +490,12 @@ const navMenu=document.getElementById('navMenu');
 navToggle.addEventListener('click',()=>{
   const isOpen=navMenu.classList.toggle('open');
   navToggle.setAttribute('aria-expanded',isOpen);
-  navToggle.setAttribute('aria-label',isOpen?'ë©ë´ ë«ê¸°':'ë©ë´ ì´ê¸°');
+  navToggle.setAttribute('aria-label',isOpen?'메뉴 닫기':'메뉴 열기');
 });
 navMenu.querySelectorAll('a').forEach(link=>{link.addEventListener('click',()=>{
   navMenu.classList.remove('open');
   navToggle.setAttribute('aria-expanded','false');
-  navToggle.setAttribute('aria-label','ë©ë´ ì´ê¸°');
+  navToggle.setAttribute('aria-label','메뉴 열기');
 })});
 
 document.querySelectorAll('[data-project]').forEach(link=>{
@@ -522,7 +522,7 @@ window.addEventListener('pageshow',function(e){
  }
 });
 
-/* ì½íì¸  ë³´í¸ â ìì¤ë³´ê¸°/ê°ë°ìëêµ¬ë§ ì°¨ë¨, ì¼ë° ì¬ì©(ë³µì¬/ì¸ì ë±)ì íì© */
+/* 콘텐츠 보호 — 소스보기/개발자도구만 차단, 일반 사용(복사/인쇄 등)은 허용 */
 document.addEventListener('contextmenu',e=>e.preventDefault());
 document.addEventListener('keydown',e=>{
   if(e.key==='F12') e.preventDefault();
