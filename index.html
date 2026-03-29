@@ -76,6 +76,8 @@ section{padding:120px 40px}
 /* WORK GRID */
 .work-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .work-card{position:relative;overflow:hidden;border-radius:12px;background:var(--bg2);border:1px solid rgba(255,255,255,.05);aspect-ratio:3/4;cursor:pointer;transition:all .4s cubic-bezier(.25,.46,.45,.94)}
+.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.work-card{position:relative;overflow:hidden;border-radius:12px;background:var(--bg2);border:1px solid rgba(255,255,255,.05);aspect-ratio:4/3;cursor:pointer;transition:all .4s cubic-bezier(.25,.46,.45,.94)}
 .work-card:hover{border-color:var(--accent);transform:translateY(-4px)}
 .work-card:hover .work-card-overlay{opacity:1}
 .work-card:hover .work-card-img{transform:scale(1.05)}
@@ -153,7 +155,6 @@ footer .links a:hover{color:var(--accent)}
 .design-philosophy{margin-top:64px;padding:32px;border-radius:12px;border:1px solid rgba(200,255,0,.15);background:rgba(200,255,0,.03)}
 .design-philosophy h4{font-weight:700;font-size:16px;margin-bottom:16px;color:var(--accent)}
 .design-philosophy p{font-size:14px;color:var(--text-dim);line-height:1.9}
-
 /* SCROLL ANIMATIONS */
 .reveal{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.25,.46,.45,.94)}
 .reveal.visible{opacity:1;transform:translateY(0)}
@@ -315,7 +316,7 @@ footer .links a:hover{color:var(--accent)}
         UI 디자인 뿐만 아니라 연출에도 많은 중요함을 알고 있기에 디자인에만 치중하지 않고,
         항상 디자인과 연출의 한계를 뛰어넘기 위해 노력하고 있습니다.<br><br>
         직관적이고 친절한 UI/UX의 구현이야말로 디자이너의 역할임을 깨달았습니다.
-        엔진에 디자인을 입힐 때는 그 퀄리티를 최대한 높이는 데 방점을 찍고,
+        엔진에 디자인을 입힐 때는 그 퀘리티를 최대한 높이는 데 방점을 찍고,
         UMG에 구현할 Material을 적극 활용해 시각적 피드백을 구현합니다.
       </p>
       <blockquote class="about-quote">
@@ -371,165 +372,40 @@ footer .links a:hover{color:var(--accent)}
       <p class="career-card-date">2018. 08 — 2020. 09</p>
       <h4 class="career-card-company">팩토리얼게임즈 UI디자인팀</h4>
       <p class="career-card-meta">UNREAL4 / TPS / MMORPG / 프로젝트 크레이지 / 사원</p>
-      <p class="career-card-desc">주로 로비 및 전투 버프/디버프 아이콘을 담당했으며, 인벤토리 및 무기 강화 쪽을 개발하고 강화에 필요한 이펙트를 머테리얼로 제작하여 적용하였습니다.</p>
+      <p class="career-card-desc">주로 로비 및 전투 버프/디버프 아이콘을 담당했으며, 인벤토리 및 무기 강화 쪽을 개발하고 강화에 필요한 이펙트를 머테리얼로 제작하여 적용하였습니다.<br>
+        주요 수행 업무는 인게임 HUD 설계, 미션 연출용 UI 연계 효과, 타겟팅/피격/스킬 사용 시의 실시간 반응형 UI 구성 등이 있으며, 특히 모바일 기기에서 발생할 수 있는 해상도 및 비율 이슈 대응을 고려한 해상도별 자동 스케일링 UI 설계와 머티리얼 기반 최적화된 HUD 이펙트 제작을 수행하였습니다.<br>
+        Unreal Engine 환경에서 UMG 기반 인터페이스를 구축하였으며, 팀 내에서 UI 연출 모듈 템플릿화 작업을 주도하여 여러 화면 간의 시각적 통일성과 효율적인 재사용 구조를 마련했습니다.
+      </p>
     </div>
     <div class="career-card">
       <p class="career-card-date">2021. 01 — 2021. 08</p>
       <h4 class="career-card-company">라인게임즈 스페이스다이브 UI디자인팀</h4>
       <p class="career-card-meta">UNREAL4 / MMORPG / 퀀텀나이츠 / 사원</p>
-      <p class="career-card-desc">인게임 HUD 및 스킬 아이콘과 강화를 담당했으며 인터랙션 및 강화에 필요한 곳에 이펙트 추가 및 가이드를 제작하여 팀원들에게 공유하여 서로가 서로에게 도움이 될 수 있는 환경을 만들었습니다.</p>
+      <p class="career-card-desc">인게임 HUD 및 스킬 아이콘과 강화를 담당했으며 인터랙션 및 강화에 필요한 곳에 이펙트 추가 및 가이드를 제작하여 팀원들에게 공유하여 서로가 서로에게 도움이 될 수 있는 환경을 만들었습니다.<br>
+        TPS 전투 기반의 MMORPG 프로젝트로, 무기 기반 스킬 구성 및 강화 UI, 인게임 HUD, 캐릭터 커스터마이징 인터페이스를 중심으로 작업을 수행하였습니다.<br>
+        실시간 전투 상황에서 유저가 시각적으로 정보를 즉시 인지할 수 있도록 스킬 쿨다운, 상태이상, 피격 피드백 등에 연계된 HUD 이펙트 구조를 설계하였으며, 강화/합성/강화 실패 연출과 같은 강화 프로세스 UI 흐름도 및 머티리얼 기반 연출도 함께 제작하였습니다.<br>
+        UI팀 내에서는 디자이너와 엔지니어 간의 연동 가이드를 직접 제작하여 디자인-to-엔진 간 협업 효율을 높였고, 위젯 요소별 머티리얼 템플릿 및 애니메이션 모듈을 정리하여 팀 내 재사용 가능한 자산으로 구축하였습니다.
+      </p>
     </div>
     <div class="career-card">
       <p class="career-card-date">2021. 08 — 2022. 07</p>
       <h4 class="career-card-company">엔픽셀 크로노오디세이 UI팀</h4>
       <p class="career-card-meta">UNREAL4-5 / MMORPG / 크로노오디세이 / 사원</p>
-      <p class="career-card-desc">주로 시스템 쪽을 담당했으며 스킬 아이콘 제작을 하였습니다. 인터랙션이 필요한 곳에 이펙트를 추가하였고 팀원들이 바로 쓸 수 있는 커스텀이 가능한 머테리얼을 만들어 모두가 사용할 수 있게 하였습니다.</p>
+      <p class="career-card-desc">주로 시스템 (이벤토리, 월드맵, 채팅, 기타 팝업)쪽을 담당했으며 스킬 아이콘 제작을 하였습니다. 인터랙션이 필요한 곳에 이펙트를 추가하였고 팀원들이 바로 쓸 수 있는 커스텀이 가능한 머테리얼을 만들어 모두가 사용할 수 있게 하였습니다.<br>
+        Unreal Engine 5 기반의 대형 MMORPG 프로젝트로, 주로 시스템 UI 설계, 스킬 아이콘 제작, UI 이펙트 연출을 담당하였습니다.<br>
+        게임 내에서 시시각각 변화하는 상황(전장 변화, 클래스 스위칭 등)에 즉각 대응할 수 있도록 레이어 구조 기반의 HUD 설계 및 피드백 이펙트 적용을 수행하였습니다. 특히 UE5 환경을 기반으로, 디자이너가 직접 커스터마이징 가능한 머티리얼을 설계하여 UMG 내 다양한 위젯에 재활용 가능하도록 구축하고, 문서화와 머티리얼 템플릿화를 통해 타 디자이너와의 협업 효율성을 대폭 향상시켰습니다. 또한, 인터랙션 요소가 포함된 UI에서는 경량화된 머티리얼 연출 방식을 제안·구현하며 엔진 퍼포먼스를 고려한 설계를 병행하였습니다.</p>
     </div>
     <div class="career-card">
       <p class="career-card-date">2022. 07 — 현재</p>
       <h4 class="career-card-company">스마일게이트엔터테인먼트 NCF UI1팀</h4>
       <p class="career-card-meta">UNREAL3-4 / FPS / 크로스파이어HD·X / 선임</p>
-      <p class="career-card-desc">이펙트 및 배너 작업을 많이 진행하였고 크로스파이어 X의 경우 Unreal4 Material로 이펙트를 제작하여 로비 및 다양한 곳에 적용시켰습니다. 또한 크로스파이어 HD 신규 로비를 진행하면서 이에 필요한 전반적인 이펙트를 담당하여 적용하였으며, 기존 라이브 로비에서의 무기 숙련도 및 PVE 결과 창, PVE 프로필 페이지 및 신규복귀 팝업 페이지에 대한 개편을 진행하였습니다.</p>
+      <p class="career-card-desc">FPS 장르의 특성을 고려하여 사용자 몰입감을 높이는 UI 이펙트 및 배너 연출 전반을 기획 및 제작하였습니다. 특히 크로스파이어X에서는 Unreal Engine 4 기반의 Material을 활용하여 HUD, 로비, 팝업 인터페이스 등 다양한 화면에 대응하는 커스터마이징 이펙트를 설계하고 적용하였으며, 애니메이션에서 쓰일 파라메터 조절과 클라이언트 팀에서 조절 해줘야할 것들을 같이 고려한 머티리얼 구조 정리를 병행하였습니다. 크로스파이어HD의 신규 로비 개편 프로젝트에서는 전체적인 UI 효과 설계와 함께, HUD 계층 구조 및 전환 애니메이션, 인터랙션 피드백 요소를 독립적으로 구축하였습니다. 기존 라이브 로비 시스템의 무기 숙련도, PVE 결과 화면, PVE 프로필, 신규·복귀 사용자 전용 페이지 등 핵심 UI 모듈에 대한 시각적 구조 재정립 및 기능 개편을 주도하였습니다.
+또한 신규 프로젝트(PROJECT J)에서는 초기 단계부터 UI 파이프라인을 설계하고, 엔진 내 UI 시스템 구조를 단독으로 구축하며, UI 위젯 클래스, 입력 체계, 해상도 대응 등을 포함한 전체 인터페이스 환경의 기반을 마련하고 있습니다.</p>
     </div>
   </div>
   <div class="design-philosophy reveal">
     <h4>UI/UX 디자인의 생각</h4>
     <p>
       UI/UX 디자인은 시간이 지날수록 그 무게와 밀도가 플랫해져 가고, UI에 입혀진 2D Effect와 깔끔한 터치감이 사용자의 이목을 더 끌어당길 수 있다고 생각합니다.<br><br>
-      이러한 트렌드와 소신을 바탕으로 엔진에 디자인을 입힐 때는 그 퀄리티를 최대한 높이는 데 방점을 찍고, UMG에 구현할 Material을 적극 활용해 시각적인 피드백을 구현해 왔습니다.<br><br>
-      디자인이 사용자들에게 시각적인 즐거움 뿐만 아니라 그 자체로 매뉴얼이자 지도가 되는 직관적인 디자인을 하는 것이 지난 7년 정도의 경력을 밑거름 삼아 세워 본 나름의 철학입니다.
-    </p>
-  </div>
-</div>
-</section>
-
-<!-- 실험실 -->
-<section id="playground">
-  <div class="section-header reveal">
-    <p class="section-num">03 — 실험실</p>
-    <h2 class="section-title">Material & 모션</h2>
-  </div>
-  <div class="playground-marquee">
-    <div class="playground-marquee-inner">
-      <span class="playground-marquee-item">MATERIAL</span>
-      <span class="playground-marquee-item">이펙트</span>
-      <span class="playground-marquee-item">MOTION</span>
-      <span class="playground-marquee-item">UNREAL</span>
-      <span class="playground-marquee-item">MATERIAL</span>
-      <span class="playground-marquee-item">이펙트</span>
-      <span class="playground-marquee-item">MOTION</span>
-      <span class="playground-marquee-item">UNREAL</span>
-    </div>
-  </div>
-  <div class="playground-grid">
-    <a href="playground/texteffect/" class="playground-item reveal reveal-delay-1">
-      <img src="playground/texteffect/images/01_hero.gif" alt="Box Mask" loading="lazy">
-      <div class="playground-item-label">Box Mask</div>
-    </a>
-    <a href="playground/boostvfx/" class="playground-item reveal reveal-delay-2">
-      <img src="playground/boostvfx/images/01_hero.gif" alt="Mosaic Random Flicker" loading="lazy">
-      <div class="playground-item-label">Mosaic Random Flicker</div>
-    </a>
-    <a href="playground/loadingeffect/" class="playground-item reveal reveal-delay-3">
-      <img src="playground/loadingeffect/images/01_hero.gif" alt="FlipBook Animation" loading="lazy">
-      <div class="playground-item-label">FlipBook Animation</div>
-    </a>
-    <a href="playground/mission/" class="playground-item reveal reveal-delay-4">
-      <img src="playground/mission/images/01_hero.gif" alt="Radial Wave" loading="lazy">
-      <div class="playground-item-label">Radial Wave</div>
-    </a>
-    <a href="playground/uimotion/" class="playground-item reveal reveal-delay-1">
-      <img src="playground/uimotion/images/01_hero.gif" alt="Interaction Wave" loading="lazy">
-      <div class="playground-item-label">Interaction Wave</div>
-    </a>
-    <a href="playground/mercy/" class="playground-item reveal reveal-delay-2">
-      <img src="playground/mercy/images/01_hero.gif" alt="Shape Wave" loading="lazy">
-      <div class="playground-item-label">Shape Wave</div>
-    </a>
-  </div>
-</section>
-
-<!-- 연락 -->
-<section id="contact" class="contact-section">
-  <div class="reveal">
-    <p class="section-num">04 — 연락</p>
-    <h2 class="contact-big">함께 <span class="accent">만들어</span><br>나가요</h2>
-    <p class="contact-desc">새로운 프로젝트나 협업에 관심이 있으시다면 편하게 연락해 주세요.</p>
-    <div class="contact-links">
-      <a href="mailto:xpfks951@naver.com" class="contact-btn primary">이메일 보내기</a>
-    </div>
-  </div>
-</section>
-
-<!-- 푸터 -->
-<footer>
-  <p class="copy">&copy; 2026 이주형. All rights reserved.</p>
-  <div class="links">
-    <a href="#hero">맨 위로</a>
-    <a href="mailto:xpfks951@naver.com">이메일</a>
-  </div>
-</footer>
-
-<script>
-const reveals=document.querySelectorAll('.reveal');
-const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
-reveals.forEach(el=>observer.observe(el));
-
-const cursor=document.getElementById('cursor');
-let cx=0,cy=0,tx=0,ty=0;
-document.addEventListener('mousemove',e=>{tx=e.clientX;ty=e.clientY});
-function updateCursor(){cx+=(tx-cx)*.12;cy+=(ty-cy)*.12;cursor.style.left=cx+'px';cursor.style.top=cy+'px';requestAnimationFrame(updateCursor)}
-updateCursor();
-document.querySelectorAll('a,button,.work-card,.playground-item,.skill-tag,.contact-btn').forEach(el=>{
-  el.addEventListener('mouseenter',()=>cursor.classList.add('hover'));
-  el.addEventListener('mouseleave',()=>cursor.classList.remove('hover'));
-});
-
-const navToggle=document.getElementById('navToggle');
-const navMenu=document.getElementById('navMenu');
-navToggle.addEventListener('click',()=>{
-  const isOpen=navMenu.classList.toggle('open');
-  navToggle.setAttribute('aria-expanded',isOpen);
-  navToggle.setAttribute('aria-label',isOpen?'메뉴 닫기':'메뉴 열기');
-});
-navMenu.querySelectorAll('a').forEach(link=>{link.addEventListener('click',()=>{
-  navMenu.classList.remove('open');
-  navToggle.setAttribute('aria-expanded','false');
-  navToggle.setAttribute('aria-label','메뉴 열기');
-})});
-
-document.querySelectorAll('[data-project]').forEach(link=>{
-  link.addEventListener('click',e=>{
-    e.preventDefault();
-    const href=link.getAttribute('href');
-    const pt=document.getElementById('pageTransition');
-    pt.style.pointerEvents='all';
-    pt.classList.add('active');
-    setTimeout(()=>{window.location.href=href},500);
-  });
-});
-window.addEventListener('load',()=>{
-  const pt=document.getElementById('pageTransition');
-  pt.classList.remove('active');
-  pt.style.pointerEvents='none';
-});
-window.addEventListener('pageshow',function(e){
- if(e.persisted){
-  var pt=document.getElementById('pageTransition');
-  pt.classList.remove('active');
-  pt.style.pointerEvents='none';
-  document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible')});
- }
-});
-
-/* 콘텐츠 보호 — 소스보기/개발자도구만 차단, 일반 사용(복사/인쇄 등)은 허용 */
-document.addEventListener('contextmenu',e=>e.preventDefault());
-document.addEventListener('keydown',e=>{
-  if(e.key==='F12') e.preventDefault();
-  if(e.ctrlKey&&(e.key==='u'||e.key==='U'||e.key==='s'||e.key==='S')) e.preventDefault();
-  if(e.ctrlKey&&e.shiftKey&&(e.key==='I'||e.key==='i'||e.key==='J'||e.key==='j')) e.preventDefault();
-});
-document.addEventListener('dragstart',e=>{if(e.target.tagName==='IMG')e.preventDefault()});
-</script>
-</body>
-</html>
+      이러한 트렌드와 소신을 바탕으로 엔진에 디자인을 입힐 때는 그 퀘리티를 최대한 높이는 데 방점을 찍고, UMG에 구현할 Material을 적극 활용해 시각적인 피드백을 구현해 왔습니다.<br><br>
+      디자인이 사용자들에게 시각적인 즐거움 뿐만 아니라 그 자체로 매뉴얼이자 지도가 되는 직관적인 디자인을 하는 것이 지난 7년 정도의 경력을 밑거름 삼아 세워 본 나름의 철�
