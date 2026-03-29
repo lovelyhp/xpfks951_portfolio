@@ -513,6 +513,14 @@ window.addEventListener('load',()=>{
   pt.classList.remove('active');
   pt.style.pointerEvents='none';
 });
+window.addEventListener('pageshow',function(e){
+ if(e.persisted){
+  var pt=document.getElementById('pageTransition');
+  pt.classList.remove('active');
+  pt.style.pointerEvents='none';
+  document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible')});
+ }
+});
 
 /* 콘텐츠 보호 — 소스보기/개발자도구만 차단, 일반 사용(복사/인쇄 등)은 허용 */
 document.addEventListener('contextmenu',e=>e.preventDefault());
